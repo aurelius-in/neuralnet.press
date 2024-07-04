@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     margin: auto;
     overflow: hidden;
 }
@@ -18,12 +18,14 @@ header {
     color: #003789; /* Blue color for text in header */
     padding: 1rem 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 header .logo {
-    width: 150px;
+    width: 100%;
+    max-width: 300px;
 }
 
 header nav {
@@ -34,10 +36,12 @@ header ul {
     list-style: none;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 header ul li {
-    margin: 0 10px;
+    margin: 10px 15px;
 }
 
 header ul li a {
@@ -46,11 +50,13 @@ header ul li a {
     padding: 10px 20px;
     border: 2px solid transparent;
     transition: all 0.3s ease;
+    background-color: rgba(0, 55, 137, 0.1);
+    border-radius: 5px;
 }
 
 header ul li a:hover {
     border: 2px solid #003789;
-    background-color: rgba(0, 55, 137, 0.2);
+    background-color: rgba(0, 55, 137, 0.3);
     color: #003789;
     box-shadow: 0px 0px 10px 2px #003789;
     text-shadow: 0 0 10px #003789;
@@ -70,6 +76,7 @@ h2 {
 .articles {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .articles .article {
