@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 articleTitle.textContent = article.title;
 
                 const articleAuthor = document.createElement('p');
-                articleAuthor.textContent = `By ${article.author}`;
+                articleAuthor.textContent = article.author;
                 articleAuthor.classList.add('article-author');
 
                 const articleContent = document.createElement('p');
