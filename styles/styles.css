@@ -122,6 +122,45 @@ h2 {
     color: #fff; /* White color for the date text */
 }
 
+.article-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.article-author {
+    font-style: italic;
+    color: #ff9900; /* Light orange color for author name */
+    margin-bottom: 20px;
+}
+
+.articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.article {
+    width: 100%;
+    max-width: 800px;
+    background: #333; /* Dark background for articles */
+    color: #fff; /* White color for text in articles */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.article h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
 footer {
     background: #fff; /* White background for footer */
     color: #003789; /* Blue color for text in footer */
