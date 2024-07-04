@@ -116,6 +116,12 @@ h2 {
     box-shadow: 0 0 15px rgba(255, 153, 0, 0.8);
 }
 
+.issue-date {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #fff; /* White color for the date text */
+}
+
 footer {
     background: #fff; /* White background for footer */
     color: #003789; /* Blue color for text in footer */
