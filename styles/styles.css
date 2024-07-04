@@ -3,7 +3,8 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #003789; /* Blue color for main area */
+    color: #fff; /* White color for main text */
 }
 
 .container {
@@ -13,23 +14,25 @@ body {
 }
 
 header {
-    background: #333;
-    color: #fff;
+    background: #fff; /* White background for header */
+    color: #003789; /* Blue color for text in header */
     padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header .logo {
     width: 150px;
-    float: left;
 }
 
 header nav {
-    float: right;
     margin-top: 10px;
 }
 
 header ul {
     list-style: none;
+    padding: 0;
 }
 
 header ul li {
@@ -38,7 +41,7 @@ header ul li {
 }
 
 header ul li a {
-    color: #fff;
+    color: #003789; /* Blue color for links in header */
     text-decoration: none;
 }
 
@@ -49,7 +52,7 @@ main {
 h2 {
     font-size: 2rem;
     font-weight: 700;
-    color: #ff6600; /* Orange color from logo */
+    color: #ff9900; /* Light orange color for headlines */
 }
 
 .articles {
@@ -61,13 +64,14 @@ h2 {
     flex: 1 1 30%;
     margin: 10px;
     padding: 10px;
-    background: #fff;
+    background: #fff; /* White background for articles */
+    color: #003789; /* Blue color for text in articles */
     border: 1px solid #ddd;
 }
 
 footer {
-    background: #333;
-    color: #fff;
+    background: #fff; /* White background for footer */
+    color: #003789; /* Blue color for text in footer */
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
