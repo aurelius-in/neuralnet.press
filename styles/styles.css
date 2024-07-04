@@ -3,7 +3,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #003789; /* Blue color for main area */
+    background: linear-gradient(to bottom, #003789, #000); /* Gradient background from dark blue to black */
     color: #fff; /* White color for main text */
 }
 
@@ -33,16 +33,27 @@ header nav {
 header ul {
     list-style: none;
     padding: 0;
+    display: flex;
 }
 
 header ul li {
-    display: inline;
-    margin: 0 5px;
+    margin: 0 10px;
 }
 
 header ul li a {
     color: #003789; /* Blue color for links in header */
     text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+header ul li a:hover {
+    border: 2px solid #003789;
+    background-color: rgba(0, 55, 137, 0.2);
+    color: #003789;
+    box-shadow: 0px 0px 10px 2px #003789;
+    text-shadow: 0 0 10px #003789;
 }
 
 main {
@@ -53,6 +64,7 @@ h2 {
     font-size: 2rem;
     font-weight: 700;
     color: #ff9900; /* Light orange color for headlines */
+    text-shadow: 0 0 10px rgba(255, 153, 0, 0.8);
 }
 
 .articles {
@@ -64,9 +76,15 @@ h2 {
     flex: 1 1 30%;
     margin: 10px;
     padding: 10px;
-    background: #fff; /* White background for articles */
-    color: #003789; /* Blue color for text in articles */
-    border: 1px solid #ddd;
+    background: #333; /* Dark background for articles */
+    color: #fff; /* White color for text in articles */
+    border: 1px solid #555;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.articles .article:hover {
+    transform: scale(1.05);
 }
 
 footer {
@@ -75,4 +93,5 @@ footer {
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
 }
