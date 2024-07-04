@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 articleElement.classList.add('article');
 
                 const articleImage = document.createElement('img');
-                articleImage.src = article.image;
+                articleImage.src = `../${article.image}`;
                 articleImage.alt = `${article.title} Image`;
                 articleImage.classList.add('article-image');
 
