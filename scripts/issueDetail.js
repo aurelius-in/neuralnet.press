@@ -15,23 +15,32 @@ document.addEventListener('DOMContentLoaded', function() {
     categories.forEach(category => {
         fetch(`../data/${issueNumber}${category}.json`)
             .then(response => response.json())
-            .then(articles => {
-                articles.forEach(article => {
-                    const articleElement = document.createElement('div');
-                    articleElement.classList.add('article');
+            .then(article => {
+                const articleElement = document.createElement('div');
+                articleElement.classList.add('article');
 
-                    const articleTitle = document.createElement('h3');
-                    articleTitle.textContent = article.title;
+                const articleImage = document.createElement('img');
+                articleImage.src = article.image;
+                articleImage.alt = `${article.title} Image`;
+                articleImage.classList.add('article-image');
 
-                    const articleContent = document.createElement('p');
-                    articleContent.textContent = article.content;
+                const articleTitle = document.createElement('h3');
+                articleTitle.textContent = article.title;
 
-                    articleElement.appendChild(articleTitle);
-                    articleElement.appendChild(articleContent);
-                    articlesContainer.appendChild(articleElement);
-                });
+                const articleAuthor = document.createElement('p');
+                articleAuthor.textContent = `By ${article.author}`;
+                articleAuthor.classList.add('article-author');
+
+                const articleContent = document.createElement('p');
+                articleContent.textContent = article.content;
+
+                articleElement.appendChild(articleImage);
+                articleElement.appendChild(articleTitle);
+                articleElement.appendChild(articleAuthor);
+                articleElement.appendChild(articleContent);
+                articlesContainer.appendChild(articleElement);
             })
-            .catch(error => console.error(`Error loading ${category} articles for issue ${issueNumber}:`, error));
+            .catch(error => console.error(`Error loading ${category} article for issue ${issueNumber}:`, error));
     });
 });
 
