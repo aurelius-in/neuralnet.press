@@ -131,10 +131,19 @@ h2 {
     margin-bottom: 20px;
 }
 
+.article-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #ff9900; /* Light orange color for the title */
+}
+
 .article-author {
     font-style: italic;
     color: #ff9900; /* Light orange color for author name */
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .articles {
@@ -153,12 +162,10 @@ h2 {
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
 }
 
-.article h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.article-content {
+    text-align: left;
 }
 
 footer {
