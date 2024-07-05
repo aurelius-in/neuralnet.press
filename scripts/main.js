@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         })
         .catch(error => console.error('Error loading issues:', error));
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+        navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
+    });
 });
 
 function formatDate(issueNumber) {
