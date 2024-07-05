@@ -1,0 +1,47 @@
+/* articles.css */
+.article-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.article-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #ff9900; /* Light orange color for the title */
+}
+
+.article-author {
+    font-style: italic;
+    color: #ff9900; /* Light orange color for author name */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.article {
+    width: 100%;
+    max-width: 800px;
+    background: #333; /* Dark background for articles */
+    color: #fff; /* White color for text in articles */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.article-content {
+    text-align: left;
+    padding: 10px; /* Adding padding to prevent text from touching the edges */
+}
