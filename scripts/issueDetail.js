@@ -28,15 +28,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 articleImage.alt = `${article.title} Image`;
                 articleImage.classList.add('article-image');
 
-                const articleTitle = document.createElement('h3');
-                articleTitle.textContent = article.title;
+                const articleTitle = document.createElement('h2');
+                articleTitle.innerHTML = article.title;
+                articleTitle.classList.add('article-title');
 
                 const articleAuthor = document.createElement('p');
-                articleAuthor.textContent = article.author;
+                articleAuthor.innerHTML = article.author;
                 articleAuthor.classList.add('article-author');
 
-                const articleContent = document.createElement('p');
-                articleContent.textContent = article.content;
+                const articleContent = document.createElement('div');
+                articleContent.innerHTML = article.content;
+                articleContent.classList.add('article-content');
 
                 articleElement.appendChild(articleImage);
                 articleElement.appendChild(articleTitle);
