@@ -9,7 +9,7 @@
 }
 
 .article-title {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Main heading size */
     font-weight: 700;
     text-align: center;
     margin-bottom: 10px;
@@ -44,4 +44,14 @@
 .article-content {
     text-align: left;
     padding: 10px; /* Adding padding to prevent text from touching the edges */
+}
+
+/* Subheading Style */
+.article-content h2 {
+    font-size: 1.25rem; /* Subheading size */
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #ffcc66; /* Light orange color for subheadings */
 }
