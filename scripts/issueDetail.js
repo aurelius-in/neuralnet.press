@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('issue-title').textContent = `Issue: ${formatDate(issueNumber)}`;
 
-    const categories = ['startups', 'research'];
+    const categories = [
+        'startups', 'research', 'industry', 'robotics', 'policy', 
+        'entertainment', 'cybersecurity', 'events', 'environment', 
+        'society', 'collaborations', 'education', 'ethics', 'healthcare'
+    ];
     const articlesContainer = document.getElementById('articles');
 
     categories.forEach(category => {
@@ -20,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 articleElement.classList.add('article');
 
                 const articleImage = document.createElement('img');
-                articleImage.src = `../${article.image}`;
+                articleImage.src = article.image;
                 articleImage.alt = `${article.title} Image`;
                 articleImage.classList.add('article-image');
 
