@@ -1,0 +1,31 @@
+/* issues.css */
+.issues {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.issue {
+    margin: 10px;
+    text-align: center;
+}
+
+.issue-thumb {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.issue-thumb:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 153, 0, 0.8);
+}
+
+.issue-date {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #fff; /* White color for the date text */
+}
