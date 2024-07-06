@@ -25,6 +25,27 @@ nav {
     margin-right: 20px;
 }
 
+.nav-links {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
 .nav-icons {
     display: flex;
     align-items: center;
