@@ -38,7 +38,7 @@
     align-items: center;
     margin-top: 20px;
     background-color: #003789; /* Blue background to match the larger background area */
-    padding: 20px;
+    padding: 0; /* Remove padding */
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -49,7 +49,7 @@
     background: #003789; /* Match the background color */
     color: #fff; /* White color for text in articles */
     padding: 20px;
-    margin: 3px; /* Minimal margin */
+    margin: 3px 0; /* Minimal margin on top and bottom */
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -77,4 +77,15 @@
     margin-top: 20px;
     margin-bottom: 10px;
     color: #ff9900; /* Light orange color for subheadings */
+}
+
+/* Reducing the margins around the article container */
+.articles {
+    margin: 0; /* No outer margin */
+    padding: 0; /* No padding */
+}
+
+/* Additional styles for the container */
+.container {
+    padding: 0 4px; /* Narrow padding for the container */
 }
