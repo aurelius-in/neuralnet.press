@@ -28,12 +28,16 @@
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+    background-color: #003789; /* Blue background to match the larger background area */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .article {
     width: 100%;
     max-width: 800px;
-    background: #333; /* Dark background for articles */
+    background: #003789; /* Match the background color */
     color: #fff; /* White color for text in articles */
     padding: 20px;
     margin-bottom: 20px;
@@ -46,12 +50,12 @@
     padding: 10px; /* Adding padding to prevent text from touching the edges */
 }
 
-/* Subheading Style */
-.article-content h2 {
-    font-size: 1.25rem; /* Subheading size */
-    font-weight: 600;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    color: #ffcc66; /* Light orange color for subheadings */
+/* New styles for the category images */
+.category-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
