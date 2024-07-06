@@ -44,12 +44,12 @@
 }
 
 .article {
-    width: 100%;
+    width: calc(100% - 6px); /* Adjusting width to fit the visible space */
     max-width: 800px;
     background: #003789; /* Match the background color */
     color: #fff; /* White color for text in articles */
     padding: 20px;
-    margin-bottom: 20px;
+    margin: 3px; /* Minimal margin */
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
