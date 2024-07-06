@@ -20,42 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(`../data/${issueNumber}${category}.json`)
             .then(response => response.json())
             .then(article => {
-                const articleElement = document.createElement('div');
-                articleElement.classList.add('article');
-
-                const categoryImage = document.createElement('img');
-                categoryImage.src = `../images/${category}_.png`;
-                categoryImage.alt = `${category.charAt(0).toUpperCase() + category.slice(1)} Image`;
-                categoryImage.classList.add('category-image');
-
-                const articleTitle = document.createElement('h2');
-                articleTitle.innerHTML = article.title;
-                articleTitle.classList.add('article-title');
-
-                const articleAuthor = document.createElement('p');
-                articleAuthor.innerHTML = article.author;
-                articleAuthor.classList.add('article-author');
-
-                const articleDate = document.createElement('p');
-                articleDate.innerHTML = formatDate(issueNumber);
-                articleDate.classList.add('article-date');
-
-                const articleImage = document.createElement('img');
-                articleImage.src = article.image;
-                articleImage.alt = `${article.title} Image`;
-                articleImage.classList.add('article-image');
-
-                const articleContent = document.createElement('div');
-                articleContent.innerHTML = article.content;
-                articleContent.classList.add('article-content');
-
-                articleElement.appendChild(categoryImage);
-                articleElement.appendChild(articleTitle);
-                articleElement.appendChild(articleAuthor);
-                articleElement.appendChild(articleDate);
-                articleElement.appendChild(articleImage);
-                articleElement.appendChild(articleContent);
-                articlesContainer.appendChild(articleElement);
+                createArticleElement(article, category, articlesContainer, issueNumber);
             })
             .catch(error => console.error(`Error loading ${category} article for issue ${issueNumber}:`, error));
     });
@@ -67,6 +32,39 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.classList.toggle('active');
     });
 });
+
+function createArticleElement(article, category, container, issueNumber) {
+    const articleElement = document.createElement('div');
+    articleElement.classList.add('article');
+
+    const headerImage = document.createElement('img');
+    headerImage.src = `../images/${category}_.png`;
+    headerImage.alt = `${category.charAt(0).toUpperCase() + category.slice(1)} Header Image`;
+    headerImage.classList.add('header-image');
+    articleElement.appendChild(headerImage);
+
+    const title = document.createElement('h2');
+    title.textContent = article.title;
+    articleElement.appendChild(title);
+
+    const author = document.createElement('p');
+    author.textContent = article.author;
+    author.classList.add('author');
+    articleElement.appendChild(author);
+
+    const image = document.createElement('img');
+    image.src = `../images/${issueNumber}${category}.png`;
+    image.alt = `${article.title} Image`;
+    image.classList.add('article-image');
+    articleElement.appendChild(image);
+
+    const content = document.createElement('div');
+    content.innerHTML = article.content;
+    content.classList.add('article-content');
+    articleElement.appendChild(content);
+
+    container.appendChild(articleElement);
+}
 
 function formatDate(issueNumber) {
     const year = `20${issueNumber.slice(0, 2)}`;
