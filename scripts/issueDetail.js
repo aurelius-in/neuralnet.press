@@ -23,6 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const articleElement = document.createElement('div');
                 articleElement.classList.add('article');
 
+                const categoryImage = document.createElement('img');
+                categoryImage.src = `../images/${category}.png`;
+                categoryImage.alt = `${category.charAt(0).toUpperCase() + category.slice(1)} Image`;
+                categoryImage.classList.add('category-image');
+
                 const articleImage = document.createElement('img');
                 articleImage.src = article.image;
                 articleImage.alt = `${article.title} Image`;
@@ -40,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 articleContent.innerHTML = article.content;
                 articleContent.classList.add('article-content');
 
+                articleElement.appendChild(categoryImage);
                 articleElement.appendChild(articleImage);
                 articleElement.appendChild(articleTitle);
                 articleElement.appendChild(articleAuthor);
