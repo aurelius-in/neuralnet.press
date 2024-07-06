@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.getElementById('nav-links');
 
     menuToggle.addEventListener('click', () => {
-        navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
+        navLinks.classList.toggle('active');
     });
 });
 
