@@ -45,10 +45,10 @@
 
 .article {
     width: calc(100% - 6px); /* Adjusting width to fit the visible space */
-    max-width: 100%; /* Ensure it takes full width */
+    max-width: 800px; /* Ensure it takes full width */
     background: #003789; /* Match the background color */
     color: #fff; /* White color for text in articles */
-    padding: 10px; /* Adjust padding for better spacing */
+    padding: 20px; /* Adjust padding for better spacing */
     margin: 0; /* Remove all margins */
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -62,7 +62,7 @@
 /* New styles for the category images */
 .category-image {
     width: 100%;
-    max-width: 100%;
+    max-width: 800px;
     height: auto;
     margin-bottom: 20px;
     border-radius: 5px;
