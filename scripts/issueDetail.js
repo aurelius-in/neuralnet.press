@@ -24,14 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 articleElement.classList.add('article');
 
                 const categoryImage = document.createElement('img');
-                categoryImage.src = `../images/${category}.png`;
+                categoryImage.src = `../images/${category}_.png`;
                 categoryImage.alt = `${category.charAt(0).toUpperCase() + category.slice(1)} Image`;
                 categoryImage.classList.add('category-image');
-
-                const articleImage = document.createElement('img');
-                articleImage.src = article.image;
-                articleImage.alt = `${article.title} Image`;
-                articleImage.classList.add('article-image');
 
                 const articleTitle = document.createElement('h2');
                 articleTitle.innerHTML = article.title;
@@ -41,14 +36,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 articleAuthor.innerHTML = article.author;
                 articleAuthor.classList.add('article-author');
 
+                const articleDate = document.createElement('p');
+                articleDate.innerHTML = formatDate(issueNumber);
+                articleDate.classList.add('article-date');
+
+                const articleImage = document.createElement('img');
+                articleImage.src = article.image;
+                articleImage.alt = `${article.title} Image`;
+                articleImage.classList.add('article-image');
+
                 const articleContent = document.createElement('div');
                 articleContent.innerHTML = article.content;
                 articleContent.classList.add('article-content');
 
                 articleElement.appendChild(categoryImage);
-                articleElement.appendChild(articleImage);
                 articleElement.appendChild(articleTitle);
                 articleElement.appendChild(articleAuthor);
+                articleElement.appendChild(articleDate);
+                articleElement.appendChild(articleImage);
                 articleElement.appendChild(articleContent);
                 articlesContainer.appendChild(articleElement);
             })
