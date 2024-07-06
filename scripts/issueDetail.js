@@ -47,10 +47,24 @@ function createArticleElement(article, category, container, issueNumber) {
     title.textContent = article.title;
     articleElement.appendChild(title);
 
-    const author = document.createElement('p');
+    const authorDateContainer = document.createElement('p');
+    authorDateContainer.classList.add('author-date-container');
+
+    const author = document.createElement('span');
     author.textContent = article.author;
     author.classList.add('author');
-    articleElement.appendChild(author);
+    authorDateContainer.appendChild(author);
+
+    const separator = document.createElement('span');
+    separator.textContent = ' ● ';
+    authorDateContainer.appendChild(separator);
+
+    const date = document.createElement('span');
+    date.textContent = formatDate(issueNumber);
+    date.classList.add('date');
+    authorDateContainer.appendChild(date);
+
+    articleElement.appendChild(authorDateContainer);
 
     const image = document.createElement('img');
     image.src = `../images/${issueNumber}${category}.png`;
