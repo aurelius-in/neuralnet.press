@@ -65,6 +65,7 @@
 .article-content {
     text-align: left;
     padding: 10px; /* Adding padding to prevent text from touching the edges */
+    line-height: 1.6; /* Adjust line spacing */
 }
 
 /* Subheading Style */
