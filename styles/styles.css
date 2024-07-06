@@ -31,7 +31,7 @@ header .container {
 
 .logo {
     max-height: 50px; /* Adjust as needed */
-    width: 90%; /* Make the logo occupy 90% of the container */
+    width: 85%; /* Make the logo occupy 85% of the container */
     margin: 0 auto;
 }
 
@@ -67,4 +67,11 @@ header .container {
 
 main {
     padding-top: 70px; /* Adjust this value based on the height of your header */
+}
+
+footer {
+    background-color: white; /* Set footer background to white */
+    color: #003789; /* Adjust text color if needed */
+    padding: 10px 0;
+    text-align: center;
 }
