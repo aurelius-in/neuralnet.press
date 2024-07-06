@@ -17,7 +17,7 @@
 }
 
 .article-author {
-    font-style: normal; /* Changed to not italic */
+    font-style: normal; /* Not italic */
     font-weight: bold; /* Bold */
     color: #fff; /* White color for author name */
     margin-bottom: 5px;
@@ -25,7 +25,7 @@
 }
 
 .article-date {
-    font-style: normal; /* Changed to not italic */
+    font-style: normal; /* Not italic */
     font-weight: bold; /* Bold */
     color: #ff9900; /* Light orange color for the date */
     margin-bottom: 20px;
@@ -49,4 +49,32 @@
     background: #003789; /* Match the background color */
     color: #fff; /* White color for text in articles */
     padding: 20px;
-    margin-bottom
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.article-content {
+    text-align: left;
+    padding: 10px; /* Adding padding to prevent text from touching the edges */
+}
+
+/* New styles for the category images */
+.category-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Subheading Style */
+.article-content h2 {
+    font-size: 1.25rem; /* Subheading size, smaller than main heading */
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #ffcc66; /* Light orange color for subheadings */
+}
