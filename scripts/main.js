@@ -1,8 +1,7 @@
-// main.js
 document.addEventListener('DOMContentLoaded', function() {
     const articlesContainer = document.getElementById('articles');
 
-    fetch('data/issues.json')
+    fetch('../data/issues.json')
         .then(response => response.json())
         .then(issues => {
             issues.forEach(issue => {
@@ -10,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 issueElement.classList.add('issue');
 
                 const issueThumb = document.createElement('img');
-                issueThumb.src = `images/${issue}thumb.png`;
+                issueThumb.src = `../images/${issue}thumb.png`;
                 issueThumb.alt = `${issue} Thumbnail`;
                 issueThumb.classList.add('issue-thumb');
                 issueThumb.addEventListener('click', () => {
@@ -30,9 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
-
     menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+        navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
     });
 });
 
