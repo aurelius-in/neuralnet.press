@@ -13,7 +13,7 @@ body {
     padding: 0 15px;
 }
 
-header .container {
+.header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,7 +31,7 @@ header .container {
 
 .logo {
     max-height: 50px; /* Adjust as needed */
-    width: 80%; /* Make the logo occupy 80% of the container */
+    width: 65%; /* Make the logo occupy 65% of the container */
     margin: 0 10px; /* Adjust margin to reduce space between logo and dropdown menu */
 }
 
