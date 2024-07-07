@@ -1,4 +1,4 @@
-/* General header styles */
+/* Header styles */
 header {
     background-color: white;
     padding: 10px 0;
@@ -9,7 +9,7 @@ header {
     z-index: 1000;
 }
 
-.header .container {
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,4 +49,20 @@ header {
 
 .nav-links.active {
     display: flex;
+}
+
+main {
+    padding-top: 70px; /* Adjust this value based on the height of your header */
+}
+
+footer {
+    background-color: white; /* Set footer background to white */
+    color: #003789; /* Adjust text color if needed */
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Additional styling for main content to avoid being obscured by the header */
+main {
+    padding-top: 70px; /* Adjust this value based on the height of your header */
 }
