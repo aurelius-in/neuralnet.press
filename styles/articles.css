@@ -1,50 +1,42 @@
-.article {
-    background-color: #003789;
+/* articles.css */
+.article-container {
+    max-width: 800px;
+    margin: 100px auto 20px;
     padding: 20px;
-    margin: 10px 3px; /* Adjusted margin */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #003789;
+    border-radius: 8px;
 }
 
-.article-title {
-    color: #ffd700;
+.article-header {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-.article-author {
-    color: #fff;
-    font-style: normal;
-    font-weight: bold;
-    margin-bottom: 5px;
-    text-align: center;
+.article-header h1 {
+    color: #ffeb3b;
+    font-size: 2em;
+    margin: 0;
 }
 
-.article-content {
-    color: #fff;
+.article-header h2 {
+    color: #ff9800;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.article-body p {
     line-height: 1.6;
+    margin: 0 0 1em 0;
 }
 
-.header-image {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.article-image {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.read-more {
-    display: block;
-    background-color: #ffd700;
-    color: #003789;
-    border: none;
-    padding: 10px;
+.article-body h2 {
+    color: #ff9800;
     text-align: center;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
+    margin: 20px 0 10px;
+}
+
+.article-body img {
+    display: block;
+    max-width: 100%;
+    margin: 20px auto;
 }
