@@ -14,11 +14,15 @@
 
 .logo {
     max-height: 50px; /* Adjust as needed */
+    width: 65%; /* Adjust as needed */
 }
 
 .nav-icons {
     display: flex;
     gap: 15px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
 }
 
 .nav-icons a {
@@ -28,6 +32,9 @@
 
 .menu-toggle {
     font-size: 24px; /* Adjust as needed */
+    position: absolute;
+    left: 10px; /* Reduce space between menu and logo */
+    top: 10px;
 }
 
 .nav-links {
