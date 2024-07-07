@@ -13,7 +13,7 @@ body {
     padding: 0 15px;
 }
 
-.header .container {
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,10 +30,10 @@ body {
 }
 
 .logo {
-    max-height: 50px;
-    width: auto;
-    max-width: 65%;
-    margin: 0 auto;
+    max-height: 50px; /* Adjust as needed */
+    width: 65%; /* Adjust percentage for better fit */
+    margin: 0 10px; /* Adjust margin to reduce space between logo and dropdown menu */
+    object-fit: contain; /* Maintain aspect ratio */
 }
 
 .nav-icons {
@@ -46,26 +46,26 @@ body {
 
 .nav-icons a {
     text-decoration: none;
-    font-size: 24px;
+    font-size: 24px; /* Adjust as needed */
 }
 
 .menu-toggle {
-    font-size: 24px;
+    font-size: 24px; /* Adjust as needed */
     position: absolute;
-    left: 10px;
+    left: 10px; /* Reduce space between menu and logo */
     top: 10px;
-    cursor: pointer;
 }
 
 .nav-links {
     display: none;
     flex-direction: column;
     gap: 10px;
-    background-color: white;
+    background-color: white; /* Ensure background color for dropdown */
     position: absolute;
-    top: 60px;
     left: 0;
-    right: 0;
+    top: 60px; /* Adjust based on header height */
+    width: 100%; /* Full width dropdown */
+    padding: 10px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -73,28 +73,24 @@ body {
     display: flex;
 }
 
-.nav-links ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 0;
-    list-style: none;
-    margin: 0;
-    text-align: center;
+.nav-links a {
+    color: #003789; /* Blue text color */
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
 }
 
-.nav-links ul li a {
-    text-decoration: none;
-    color: #003789;
+.nav-links a:hover {
+    background-color: #f1f1f1; /* Light gray on hover */
 }
 
 main {
-    padding-top: 70px;
+    padding-top: 70px; /* Adjust this value based on the height of your header */
 }
 
 footer {
-    background-color: white;
-    color: #003789;
+    background-color: white; /* Set footer background to white */
+    color: #003789; /* Adjust text color if needed */
     padding: 10px 0;
     text-align: center;
 }
