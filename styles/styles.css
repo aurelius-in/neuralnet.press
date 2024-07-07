@@ -13,6 +13,58 @@ body {
     padding: 0 15px;
 }
 
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    max-height: 50px; /* Adjust as needed */
+    width: 80%; /* Make the logo occupy 80% of the container */
+    margin: 0 10px; /* Adjust margin to reduce space between logo and dropdown menu */
+}
+
+.nav-icons {
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+
+.nav-icons a {
+    text-decoration: none;
+    font-size: 24px; /* Adjust as needed */
+}
+
+.menu-toggle {
+    font-size: 24px; /* Adjust as needed */
+    position: absolute;
+    left: 10px; /* Reduce space between menu and logo */
+    top: 10px;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
 main {
     padding-top: 70px; /* Adjust this value based on the height of your header */
 }
@@ -22,4 +74,9 @@ footer {
     color: #003789; /* Adjust text color if needed */
     padding: 10px 0;
     text-align: center;
+}
+
+/* Ignore <br> when adjacent to <p> or <h2> */
+p + br, h2 + br, br + p, br + h2 {
+    display: none;
 }
