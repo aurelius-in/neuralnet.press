@@ -14,7 +14,8 @@
 
 .logo {
     max-height: 50px; /* Adjust as needed */
-    width: 65%; /* Adjust as needed */
+    max-width: 65%; /* Ensure the logo retains its aspect ratio */
+    margin: 0 auto; /* Center the logo */
 }
 
 .nav-icons {
@@ -37,12 +38,16 @@
     top: 10px;
 }
 
-.nav-links {
+nav {
     display: none;
-    flex-direction: column;
-    gap: 10px;
 }
 
 .nav-links.active {
+    display: block;
+}
+
+.nav-links ul {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
