@@ -1,42 +1,114 @@
 /* articles.css */
-.article-container {
-    max-width: 800px;
-    margin: 100px auto 20px;
-    padding: 20px;
-    background-color: #003789;
-    border-radius: 8px;
-}
-
-.article-header {
-    text-align: center;
+.article-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
 }
 
-.article-header h1 {
-    color: #ffeb3b;
-    font-size: 2em;
-    margin: 0;
-}
-
-.article-header h2 {
-    color: #ff9800;
-    font-size: 1.5em;
-    margin-top: 10px;
-}
-
-.article-body p {
-    line-height: 1.6;
-    margin: 0 0 1em 0;
-}
-
-.article-body h2 {
-    color: #ff9800;
-    text-align: center;
-    margin: 20px 0 10px;
-}
-
-.article-body img {
-    display: block;
+.header-image {
+    width: 100%;
     max-width: 100%;
-    margin: 20px auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.article-title {
+    font-size: 1.5rem; /* Main heading size */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #ffcc66; /* Light yellow color for the title */
+}
+
+.article-author {
+    font-style: normal; /* Not italic */
+    font-weight: bold; /* Bold */
+    color: #fff; /* White color for author name */
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.article-date {
+    font-style: normal; /* Not italic */
+    font-weight: bold; /* Bold */
+    color: #ff9900; /* Light orange color for the date */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #003789; /* Blue background to match the larger background area */
+    padding: 0; /* Remove padding */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.article {
+    width: calc(100% - 6px); /* Adjusting width to fit the visible space */
+    max-width: 800px; /* Ensure it takes full width */
+    background: #003789; /* Match the background color */
+    color: #fff; /* White color for text in articles */
+    padding: 20px; /* Adjust padding for better spacing */
+    margin: 0; /* Remove all margins */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.article-content {
+    text-align: left;
+    padding: 10px; /* Adding padding to prevent text from touching the edges */
+    line-height: 1.6; /* Adjust line spacing */
+    margin-bottom: 10px; /* Reduce space between paragraphs */
+}
+
+/* Subheading Style */
+.article-content h2 {
+    font-size: 1.25rem; /* Subheading size, smaller than main heading */
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #ff9900; /* Light orange color for subheadings */
+}
+
+/* Reducing the margins around the article container */
+.articles {
+    margin: 0; /* No outer margin */
+    padding: 0; /* No padding */
+}
+
+/* Additional styles for the container */
+.container {
+    padding: 0 3px; /* Narrow padding for the container */
+}
+
+/* Adding top padding to the main content to avoid being obscured by the header */
+main {
+    padding-top: 70px; /* Adjust this value based on the height of your header */
+}
+
+/* Read More Button */
+.read-more {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.read-more:hover {
+    background-color: #cc7a00;
 }

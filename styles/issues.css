@@ -1,102 +1,31 @@
-/* Styles for issues page */
-#issues {
+/* issues.css */
+.issues {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 20px;
+    justify-content: center;
 }
 
 .issue {
-    width: 100%;
-    max-width: 200px;
     margin: 10px;
     text-align: center;
 }
 
 .issue-thumb {
     width: 100%;
+    max-width: 200px;
+    height: auto;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.issue-thumb:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 153, 0, 0.8);
 }
 
 .issue-date {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #ffcc66;
     margin-top: 10px;
-}
-
-/* Styles for articles within an issue */
-.articles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    background-color: #003789; /* Blue background to match the larger background area */
-    padding: 0; /* Remove padding */
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.article {
-    width: calc(100% - 6px); /* Adjusting width to fit the visible space */
-    max-width: 800px; /* Ensure it takes full width */
-    background: #003789; /* Match the background color */
-    color: #fff; /* White color for text in articles */
-    padding: 20px; /* Adjust padding for better spacing */
-    margin: 0; /* Remove all margins */
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.article-content {
-    text-align: left;
-    padding: 10px; /* Adding padding to prevent text from touching the edges */
-    line-height: 1.6; /* Adjust line spacing */
-    margin-bottom: 10px; /* Reduce space between paragraphs */
-}
-
-/* Subheading Style */
-.article-content h2 {
-    font-size: 1.25rem; /* Subheading size, smaller than main heading */
-    font-weight: 600;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    color: #ff9900; /* Light orange color for subheadings */
-}
-
-/* Reducing the margins around the article container */
-.articles {
-    margin: 0; /* No outer margin */
-    padding: 0; /* No padding */
-}
-
-/* Additional styles for the container */
-.container {
-    padding: 0 3px; /* Narrow padding for the container */
-}
-
-/* Adding top padding to the main content to avoid being obscured by the header */
-main {
-    padding-top: 70px; /* Adjust this value based on the height of your header */
-}
-
-/* Read More Button */
-.read-more {
-    display: block;
-    margin: 10px auto;
-    padding: 10px 20px;
-    background-color: #ff9900;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    text-align: center;
-}
-
-.read-more:hover {
-    background-color: #cc7a00;
+    font-size: 1.1rem;
+    color: #fff; /* White color for the date text */
 }

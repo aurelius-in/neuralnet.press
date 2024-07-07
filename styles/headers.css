@@ -1,7 +1,10 @@
-/* Header styles */
-header {
+/* headers.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: white;
-    padding: 10px 0;
+    padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
@@ -9,24 +12,13 @@ header {
     z-index: 1000;
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .logo {
     max-height: 50px; /* Adjust as needed */
-    width: 80%; /* Make the logo occupy 80% of the container */
-    margin: 0 10px; /* Adjust margin to reduce space between logo and dropdown menu */
 }
 
 .nav-icons {
     display: flex;
     gap: 15px;
-    position: absolute;
-    right: 15px;
-    top: 10px;
 }
 
 .nav-icons a {
@@ -36,9 +28,6 @@ header .container {
 
 .menu-toggle {
     font-size: 24px; /* Adjust as needed */
-    position: absolute;
-    left: 10px; /* Reduce space between menu and logo */
-    top: 10px;
 }
 
 .nav-links {
@@ -49,20 +38,4 @@ header .container {
 
 .nav-links.active {
     display: flex;
-}
-
-main {
-    padding-top: 70px; /* Adjust this value based on the height of your header */
-}
-
-footer {
-    background-color: white; /* Set footer background to white */
-    color: #003789; /* Adjust text color if needed */
-    padding: 10px 0;
-    text-align: center;
-}
-
-/* Additional styling for main content to avoid being obscured by the header */
-main {
-    padding-top: 70px; /* Adjust this value based on the height of your header */
 }
