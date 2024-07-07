@@ -1,82 +1,93 @@
-/* General styles for the website */
+/* styles.css */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #003789;
-    color: #fff;
+    color: white;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-header .container {
+header {
+    background-color: white;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.header {
-    background-color: white;
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
-    width: 100%;
     top: 0;
+    width: 100%;
     z-index: 1000;
 }
 
-.logo {
-    max-height: 50px; /* Adjust as needed */
-    width: 80%; /* Make the logo occupy 80% of the container */
-    margin: 0 10px; /* Adjust margin to reduce space between logo and dropdown menu */
+header img.logo {
+    height: 50px;
+    max-width: 75%;
 }
 
-.nav-icons {
+header nav {
     display: flex;
-    gap: 15px;
-    position: absolute;
-    right: 15px;
-    top: 10px;
+    align-items: center;
 }
 
-.nav-icons a {
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
     text-decoration: none;
-    font-size: 24px; /* Adjust as needed */
+    color: #003789;
+    font-weight: bold;
 }
 
 .menu-toggle {
-    font-size: 24px; /* Adjust as needed */
-    position: absolute;
-    left: 10px; /* Reduce space between menu and logo */
-    top: 10px;
-}
-
-.nav-links {
     display: none;
-    flex-direction: column;
-    gap: 10px;
 }
 
-.nav-links.active {
-    display: flex;
-}
-
-main {
-    padding-top: 70px; /* Adjust this value based on the height of your header */
+.search-icon, .profile-icon {
+    cursor: pointer;
+    margin-left: 10px;
 }
 
 footer {
-    background-color: white; /* Set footer background to white */
-    color: #003789; /* Adjust text color if needed */
+    background-color: white;
+    color: #003789;
+    text-align: center;
     padding: 10px 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Styles for issues page */
+.issues {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.issue {
+    margin: 10px 0;
     text-align: center;
 }
 
-/* Ignore <br> when adjacent to <p> or <h2> */
-p + br, h2 + br, br + p, br + h2 {
-    display: none;
+.issue-thumb {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+}
+
+.issue-date {
+    color: #ff9800;
+    font-weight: bold;
+    margin-top: 10px;
 }
