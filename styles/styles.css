@@ -31,9 +31,7 @@ header .container {
 
 .logo {
     max-height: 50px; /* Adjust as needed */
-    width: 65%; /* Adjust percentage for better fit */
-    margin: 0 10px; /* Adjust margin to reduce space between logo and dropdown menu */
-    object-fit: contain; /* Maintain aspect ratio */
+    max-width: 65%; /* Ensure the logo retains aspect ratio */
 }
 
 .nav-icons {
@@ -60,28 +58,20 @@ header .container {
     display: none;
     flex-direction: column;
     gap: 10px;
-    background-color: white; /* Ensure background color for dropdown */
-    position: absolute;
-    left: 0;
-    top: 60px; /* Adjust based on header height */
-    width: 100%; /* Full width dropdown */
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links.active {
     display: flex;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 10px;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links a {
-    color: #003789; /* Blue text color */
-    text-decoration: none;
-    padding: 10px 15px;
-    display: block;
-}
-
-.nav-links a:hover {
-    background-color: #f1f1f1; /* Light gray on hover */
+    color: #003789;
 }
 
 main {
