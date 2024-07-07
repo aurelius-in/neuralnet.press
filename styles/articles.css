@@ -79,6 +79,22 @@
     color: #ff9900; /* Light orange color for subheadings */
 }
 
+/* Reducing the margins around the article container */
+.articles {
+    margin: 0; /* No outer margin */
+    padding: 0; /* No padding */
+}
+
+/* Additional styles for the container */
+.container {
+    padding: 0 3px; /* Narrow padding for the container */
+}
+
+/* Adding top padding to the main content to avoid being obscured by the header */
+main {
+    padding-top: 70px; /* Adjust this value based on the height of your header */
+}
+
 /* Read More Button */
 .read-more {
     display: block;
