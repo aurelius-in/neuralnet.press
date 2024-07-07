@@ -1,12 +1,18 @@
-/* issues.css */
+/* Issues page styles */
 .issues {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .issue {
-    margin: 10px;
+    background-color: #003789;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 
@@ -14,18 +20,11 @@
     width: 100%;
     max-width: 200px;
     height: auto;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.issue-thumb:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 153, 0, 0.8);
+    margin-bottom: 10px;
 }
 
 .issue-date {
-    margin-top: 10px;
-    font-size: 1.1rem;
-    color: #fff; /* White color for the date text */
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ff9900; /* Light orange color for the date */
 }
