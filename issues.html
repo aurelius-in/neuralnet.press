@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuralNet Press - Issues</title>
+    <title>Issues - NeuralNet Press</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/articles.css">
+    <link rel="stylesheet" href="styles/headers.css">
+    <link rel="stylesheet" href="styles/issues.css">
 </head>
 <body>
-    <header id="topbar"></header>
+    <header class="header">
+        <!-- Topbar content will be loaded here dynamically -->
+    </header>
     <main>
         <div class="container">
             <h2>Past Issues</h2>
@@ -23,12 +26,7 @@
             <p>&copy; 2024 NeuralNet Press. All rights reserved.</p>
         </div>
     </footer>
-    <script>
-        // Load topbar
-        fetch('topbar.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('topbar').innerHTML = data);
-    </script>
+    <script src="scripts/topbar.js"></script>
     <script src="scripts/issues.js"></script>
     <script src="scripts/main.js"></script>
 </body>
