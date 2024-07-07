@@ -7,21 +7,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/articles.css">
+    <link rel="stylesheet" href="styles/headers.css">
 </head>
 <body>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('topbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.body.insertAdjacentHTML('afterbegin', data);
-                    document.getElementById('menu-toggle').addEventListener('click', function() {
-                        document.getElementById('nav-links').classList.toggle('active');
-                    });
-                })
-                .catch(error => console.error('Error loading topbar:', error));
-        });
-    </script>
+    <header class="header">
+        <div class="container">
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <img src="images/nnlogo.png" alt="NeuralNet Press Logo" class="logo">
+            <div class="nav-icons">
+                <a href="#"><span class="magnifying-glass">🔍</span></a>
+                <a href="#"><span class="profile-icon">👤</span></a>
+            </div>
+            <nav>
+                <ul id="nav-links" class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="issues.html">Issues</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <main>
         <div class="container">
             <h2>Past Issues</h2>
