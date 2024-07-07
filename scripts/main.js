@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 issueThumb.alt = `${issue} Thumbnail`;
                 issueThumb.classList.add('issue-thumb');
                 issueThumb.addEventListener('click', () => {
-                    window.location.href = `issueDetail.html?issue=${issue}`;
+                    window.location.href = `articles/issueDetail.html?issue=${issue}`;
                 });
 
                 const issueDate = document.createElement('p');
