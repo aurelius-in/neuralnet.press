@@ -1,16 +1,14 @@
-// topbar.js
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('topbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('topbar').innerHTML = data;
-
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.getElementById('nav-links');
-
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        })
-        .catch(error => console.error('Error loading topbar:', error));
-});
+<!-- Include this script in the <head> or just before the closing </body> tag of each HTML page -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('topbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+                document.getElementById('menu-toggle').addEventListener('click', function() {
+                    document.getElementById('nav-links').classList.toggle('active');
+                });
+            })
+            .catch(error => console.error('Error loading topbar:', error));
+    });
+</script>
