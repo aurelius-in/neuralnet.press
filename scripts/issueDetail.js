@@ -73,11 +73,12 @@ function createArticleElement(article, category, container, issueNumber) {
     articleElement.appendChild(image);
 
     const content = document.createElement('div');
-    content.innerHTML = trimContent(article.content, 200).trimmedText;
+    const trimmedContent = trimContent(article.content, 200);
+    content.innerHTML = trimmedContent.trimmedText;
     content.classList.add('article-content');
     articleElement.appendChild(content);
 
-    const remainingText = trimContent(article.content, 200).remainingText;
+    let remainingText = trimmedContent.remainingText;
     if (remainingText) {
         const readMoreButton = document.createElement('button');
         readMoreButton.textContent = 'Read More';
