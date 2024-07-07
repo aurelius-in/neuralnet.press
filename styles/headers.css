@@ -36,18 +36,36 @@
     position: absolute;
     left: 10px; /* Reduce space between menu and logo */
     top: 10px;
+    cursor: pointer; /* Add pointer cursor */
 }
 
-nav {
+.nav-links {
     display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white; /* Match header background */
+    position: absolute;
+    top: 100%; /* Position below header */
+    left: 0;
+    right: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links.active {
-    display: block;
+    display: flex;
 }
 
 .nav-links ul {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 10px 0; /* Add padding for better spacing */
+    list-style: none;
+    margin: 0;
+    text-align: center; /* Center the links */
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #003789; /* Adjust link color */
 }
