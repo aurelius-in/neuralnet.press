@@ -66,6 +66,7 @@
     text-align: left;
     padding: 10px; /* Adding padding to prevent text from touching the edges */
     line-height: 1.6; /* Adjust line spacing */
+    margin-bottom: 10px; /* Reduce space between paragraphs */
 }
 
 /* Subheading Style */
