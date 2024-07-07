@@ -1,17 +1,19 @@
 <!-- topbar.html -->
-<div class="top-bar">
-    <button class="menu-toggle" id="menu-toggle">☰ Menu</button>
-    <img src="images/nnlogo.png" alt="NeuralNet Press Logo" class="logo">
-    <div class="nav-icons">
-        <a href="#"><span class="magnifying-glass">🔍</span></a>
-        <a href="#"><span class="profile-icon">👤</span></a>
+<div class="topbar">
+    <div class="menu-button" onclick="toggleMenu()">☰ Menu</div>
+    <div class="logo">
+        <img src="/assets/logo.png" alt="NeuralNet Press Logo" style="width: 65%; height: auto;">
     </div>
-    <nav>
-        <ul id="nav-links" class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="issues.html">Issues</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="nav-icons">
+        <img src="/assets/search-icon.png" alt="Search Icon">
+        <img src="/assets/profile-icon.png" alt="Profile Icon">
+    </div>
+</div>
+<div id="dropdown" class="dropdown-content">
+    <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/issues.html">Issues</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+    </ul>
 </div>
