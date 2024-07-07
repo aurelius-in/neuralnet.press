@@ -1,10 +1,7 @@
-/* headers.css */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* General header styles */
+header {
     background-color: white;
-    padding: 10px 20px;
+    padding: 10px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
@@ -12,13 +9,24 @@
     z-index: 1000;
 }
 
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .logo {
     max-height: 50px; /* Adjust as needed */
+    width: 80%; /* Make the logo occupy 80% of the container */
+    margin: 0 10px; /* Adjust margin to reduce space between logo and dropdown menu */
 }
 
 .nav-icons {
     display: flex;
     gap: 15px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
 }
 
 .nav-icons a {
@@ -28,6 +36,9 @@
 
 .menu-toggle {
     font-size: 24px; /* Adjust as needed */
+    position: absolute;
+    left: 10px; /* Reduce space between menu and logo */
+    top: 10px;
 }
 
 .nav-links {
