@@ -13,42 +13,35 @@
 }
 
 .logo {
-    max-height: 50px;
-    width: auto;
-    max-width: 65%;
-    margin: 0 auto;
+    max-height: 50px; /* Adjust as needed */
+    width: 65%; /* Adjust percentage for better fit */
+    object-fit: contain; /* Maintain aspect ratio */
 }
 
 .nav-icons {
     display: flex;
     gap: 15px;
-    position: absolute;
-    right: 15px;
-    top: 10px;
 }
 
 .nav-icons a {
     text-decoration: none;
-    font-size: 24px;
+    font-size: 24px; /* Adjust as needed */
 }
 
 .menu-toggle {
-    font-size: 24px;
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    cursor: pointer;
+    font-size: 24px; /* Adjust as needed */
 }
 
 .nav-links {
     display: none;
     flex-direction: column;
     gap: 10px;
-    background-color: white;
+    background-color: white; /* Ensure background color for dropdown */
     position: absolute;
-    top: 60px;
     left: 0;
-    right: 0;
+    top: 60px; /* Adjust based on header height */
+    width: 100%; /* Full width dropdown */
+    padding: 10px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -56,17 +49,13 @@
     display: flex;
 }
 
-.nav-links ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 0;
-    list-style: none;
-    margin: 0;
-    text-align: center;
+.nav-links a {
+    color: #003789; /* Blue text color */
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
 }
 
-.nav-links ul li a {
-    text-decoration: none;
-    color: #003789;
+.nav-links a:hover {
+    background-color: #f1f1f1; /* Light gray on hover */
 }
