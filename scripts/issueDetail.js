@@ -1,52 +1,44 @@
+// issueDetail.js
 document.addEventListener('DOMContentLoaded', function() {
-    const articlesContainer = document.getElementById('articles');
     const urlParams = new URLSearchParams(window.location.search);
-    const issue = urlParams.get('issue');
+    const issueNumber = urlParams.get('issue');
+    const articlesContainer = document.getElementById('articles');
 
-    fetch(`../data/${issue}.json`)
+    fetch(`../data/${issueNumber}.json`)
         .then(response => response.json())
-        .then(articles => {
-            articles.forEach(article => {
+        .then(data => {
+            data.forEach(article => {
                 const articleElement = document.createElement('div');
-                articleElement.classList.add('article');
+                articleElement.classList.add('article-container');
 
-                const headerImage = document.createElement('img');
-                headerImage.src = `../images/${issue}${article.category}_.png`;
-                headerImage.alt = `${article.category} Header Image`;
-                headerImage.classList.add('header-image');
+                const articleHeader = document.createElement('div');
+                articleHeader.classList.add('article-header');
 
-                const articleTitle = document.createElement('h2');
-                articleTitle.classList.add('article-title');
-                articleTitle.textContent = article.title;
+                const categoryHeader = document.createElement('img');
+                categoryHeader.src = `../images/${issueNumber}${article.category}_.png`;
+                categoryHeader.alt = `${article.category} Header`;
+                articleHeader.appendChild(categoryHeader);
 
-                const articleAuthor = document.createElement('p');
-                articleAuthor.classList.add('article-author');
-                articleAuthor.innerHTML = `<span style="color: #fff;">${article.author}</span> ● <span style="color: #ff9900;">${formatDate(issue)}</span>`;
+                const title = document.createElement('h1');
+                title.textContent = article.title;
+                articleHeader.appendChild(title);
 
-                const articleImage = document.createElement('img');
-                articleImage.src = `../images/${issue}${article.category}.png`;
-                articleImage.alt = `${article.category} Image`;
-                articleImage.classList.add('article-image');
+                const authorDate = document.createElement('p');
+                authorDate.innerHTML = `<span style="color: #ff9800; font-weight: bold;">${article.author}</span> <span style="color: white; font-weight: bold;">● ${formatDate(issueNumber)}</span>`;
+                articleHeader.appendChild(authorDate);
 
-                const articleContent = document.createElement('div');
-                articleContent.classList.add('article-content');
-                articleContent.innerHTML = article.content.split('.<br><br>').join('<br>'); // Adjusting the format
+                articleElement.appendChild(articleHeader);
 
-                const readMoreButton = document.createElement('button');
-                readMoreButton.classList.add('read-more');
-                readMoreButton.textContent = 'Read More';
-                readMoreButton.addEventListener('click', () => {
-                    const fullContent = article.content;
-                    articleContent.innerHTML = fullContent.split('.<br><br>').join('<br>'); // Adjusting the format
-                    readMoreButton.style.display = 'none';
-                });
+                const image = document.createElement('img');
+                image.src = `../images/${issueNumber}${article.category}.png`;
+                image.alt = `${article.category} Image`;
+                articleElement.appendChild(image);
 
-                articleElement.appendChild(headerImage);
-                articleElement.appendChild(articleTitle);
-                articleElement.appendChild(articleAuthor);
-                articleElement.appendChild(articleImage);
-                articleElement.appendChild(articleContent);
-                articleElement.appendChild(readMoreButton);
+                const articleBody = document.createElement('div');
+                articleBody.classList.add('article-body');
+                articleBody.innerHTML = article.content;
+
+                articleElement.appendChild(articleBody);
                 articlesContainer.appendChild(articleElement);
             });
         })
@@ -55,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
     menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+        navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
     });
 });
 
