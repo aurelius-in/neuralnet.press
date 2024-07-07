@@ -1,4 +1,4 @@
-/* General styles for the website */
+/* styles.css */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -13,12 +13,6 @@ body {
     padding: 0 15px;
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .header {
     background-color: white;
     padding: 10px 0;
@@ -30,57 +24,47 @@ header .container {
 }
 
 .logo {
-    max-height: 50px; /* Adjust as needed */
-    max-width: 65%; /* Ensure the logo retains aspect ratio */
+    max-height: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .nav-icons {
     display: flex;
     gap: 15px;
-    position: absolute;
-    right: 15px;
-    top: 10px;
 }
 
 .nav-icons a {
     text-decoration: none;
-    font-size: 24px; /* Adjust as needed */
+    font-size: 24px;
 }
 
 .menu-toggle {
-    font-size: 24px; /* Adjust as needed */
-    position: absolute;
-    left: 10px; /* Reduce space between menu and logo */
-    top: 10px;
+    font-size: 24px;
 }
 
 .nav-links {
     display: none;
     flex-direction: column;
     gap: 10px;
+    position: absolute;
+    background-color: white;
+    top: 60px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links.active {
     display: flex;
-    position: absolute;
-    top: 60px; /* Adjust based on header height */
-    left: 10px;
-    background-color: white;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.nav-links a {
-    color: #003789;
 }
 
 main {
-    padding-top: 70px; /* Adjust this value based on the height of your header */
+    padding-top: 70px;
 }
 
 footer {
-    background-color: white; /* Set footer background to white */
-    color: #003789; /* Adjust text color if needed */
+    background-color: white;
+    color: #003789;
     padding: 10px 0;
     text-align: center;
 }
