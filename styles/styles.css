@@ -1,208 +1,74 @@
-/* Consolidated CSS from articles.css, headers.css, and issues.css */
-
-/* General Styles */
+/* General styles for the website */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #003789;
+    color: #fff;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
-/* Header Styles */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.top-bar {
     background-color: white;
-    padding: 10px 20px;
+    padding: 10px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    max-height: 50px;
-    width: 65%;
-    object-fit: contain;
+    max-height: 50px; /* Adjust as needed */
+    height: auto;
+    margin: 0 10px; /* Adjust margin to reduce space between logo and dropdown menu */
 }
 
 .nav-icons {
     display: flex;
     gap: 15px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
 }
 
 .nav-icons a {
     text-decoration: none;
-    font-size: 24px;
+    font-size: 24px; /* Adjust as needed */
 }
 
 .menu-toggle {
-    font-size: 24px;
+    font-size: 24px; /* Adjust as needed */
+    position: absolute;
+    left: 10px; /* Reduce space between menu and logo */
+    top: 10px;
 }
 
 .nav-links {
     display: none;
     flex-direction: column;
     gap: 10px;
-    background-color: white;
-    position: absolute;
-    left: 0;
-    top: 60px;
-    width: 100%;
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links.active {
     display: flex;
 }
 
-.nav-links a {
-    color: #003789;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: block;
-}
-
-.nav-links a:hover {
-    background-color: #f1f1f1;
-}
-
-/* Article Styles */
-.article-image,
-.header-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-}
-
-.article-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 10px;
-    color: #ffcc66;
-}
-
-.article-author,
-.article-date {
-    font-weight: bold;
-    text-align: center;
-}
-
-.article-author {
-    color: #fff;
-    margin-bottom: 5px;
-}
-
-.article-date {
-    color: #ff9900;
-    margin-bottom: 20px;
-}
-
-.articles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    background-color: #003789;
-    padding: 0;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.article {
-    width: calc(100% - 6px);
-    max-width: 800px;
-    background: #003789;
-    color: #fff;
-    padding: 20px;
-    margin: 0;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.article-content {
-    text-align: left;
-    padding: 10px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-.article-content h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    color: #ff9900;
-}
-
-.read-more {
-    display: block;
-    margin: 10px auto;
-    padding: 10px 20px;
-    background-color: #ff9900;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    text-align: center;
-}
-
-.read-more:hover {
-    background-color: #cc7a00;
-}
-
-/* Issue Styles */
-.issues {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.issue {
-    margin: 10px;
-    text-align: center;
-}
-
-.issue-thumb {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.issue-thumb:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 153, 0, 0.8);
-}
-
-.issue-date {
-    margin-top: 10px;
-    font-size: 1.1rem;
-    color: #fff;
-}
-
-/* Additional Styles */
 main {
-    padding-top: 70px;
+    padding-top: 70px; /* Adjust this value based on the height of your header */
 }
 
-.container {
-    padding: 0 3px;
+footer {
+    background-color: white; /* Set footer background to white */
+    color: #003789; /* Adjust text color if needed */
+    padding: 10px 0;
+    text-align: center;
 }
