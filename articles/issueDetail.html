@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="../styles/articles.css">
-    <link rel="stylesheet" href="../styles/headers.css">
 </head>
 <body>
     <header id="topbar"></header>
@@ -24,23 +23,13 @@
             <p>&copy; 2024 NeuralNet Press. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        // Load topbar
+        fetch('../topbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('topbar').innerHTML = data);
+    </script>
     <script src="../scripts/issueDetail.js"></script>
     <script src="../scripts/main.js"></script>
-    <script>
-        // Load the topbar
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('../topbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('topbar').innerHTML = data;
-                    const menuToggle = document.getElementById('menu-toggle');
-                    const navLinks = document.getElementById('nav-links');
-
-                    menuToggle.addEventListener('click', () => {
-                        navLinks.classList.toggle('active');
-                    });
-                });
-        });
-    </script>
 </body>
 </html>
