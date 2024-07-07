@@ -77,7 +77,34 @@ function createArticleElement(article, category, container, issueNumber) {
     content.classList.add('article-content');
     articleElement.appendChild(content);
 
+    const trimmedContent = trimContent(article.content, 200);
+    content.innerHTML = trimmedContent.trimmedText;
+
+    if (trimmedContent.remainingText) {
+        const readMoreButton = document.createElement('button');
+        readMoreButton.textContent = 'Read More';
+        readMoreButton.classList.add('read-more');
+        readMoreButton.addEventListener('click', function() {
+            const additionalContent = trimContent(trimmedContent.remainingText, 200);
+            content.innerHTML += additionalContent.trimmedText;
+            if (!additionalContent.remainingText) {
+                readMoreButton.style.display = 'none';
+            }
+        });
+        articleElement.appendChild(readMoreButton);
+    }
+
     container.appendChild(articleElement);
+}
+
+function trimContent(content, wordLimit) {
+    const words = content.split(/\s+/);
+    if (words.length > wordLimit) {
+        const trimmedText = words.slice(0, wordLimit).join(' ');
+        const remainingText = words.slice(wordLimit).join(' ');
+        return { trimmedText, remainingText };
+    }
+    return { trimmedText: content, remainingText: '' };
 }
 
 function formatDate(issueNumber) {
