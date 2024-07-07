@@ -14,8 +14,9 @@
 
 .logo {
     max-height: 50px; /* Adjust as needed */
+    width: auto;
     max-width: 65%; /* Ensure the logo retains its aspect ratio */
-    margin: 0 auto; /* Center the logo */
+    margin: 0 10px; /* Center the logo */
 }
 
 .nav-icons {
@@ -45,7 +46,7 @@
     gap: 10px;
     background-color: white; /* Match header background */
     position: absolute;
-    top: 100%; /* Position below header */
+    top: 60px; /* Position below header */
     left: 0;
     right: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
