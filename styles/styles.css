@@ -1,4 +1,4 @@
-/* styles.css */
+/* General styles for the website */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -13,7 +13,7 @@ body {
     padding: 0 15px;
 }
 
-.header {
+.top-bar {
     background-color: white;
     padding: 10px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -21,37 +21,41 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    max-height: 50px;
-    margin-left: auto;
-    margin-right: auto;
+    max-height: 50px; /* Adjust as needed */
+    height: auto;
+    margin: 0 10px; /* Adjust margin to reduce space between logo and dropdown menu */
 }
 
 .nav-icons {
     display: flex;
     gap: 15px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
 }
 
 .nav-icons a {
     text-decoration: none;
-    font-size: 24px;
+    font-size: 24px; /* Adjust as needed */
 }
 
 .menu-toggle {
-    font-size: 24px;
+    font-size: 24px; /* Adjust as needed */
+    position: absolute;
+    left: 10px; /* Reduce space between menu and logo */
+    top: 10px;
 }
 
 .nav-links {
     display: none;
     flex-direction: column;
     gap: 10px;
-    position: absolute;
-    background-color: white;
-    top: 60px;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links.active {
@@ -59,12 +63,12 @@ body {
 }
 
 main {
-    padding-top: 70px;
+    padding-top: 70px; /* Adjust this value based on the height of your header */
 }
 
 footer {
-    background-color: white;
-    color: #003789;
+    background-color: white; /* Set footer background to white */
+    color: #003789; /* Adjust text color if needed */
     padding: 10px 0;
     text-align: center;
 }
