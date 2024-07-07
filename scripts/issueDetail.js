@@ -45,6 +45,7 @@ function createArticleElement(article, category, container, issueNumber) {
 
     const title = document.createElement('h2');
     title.textContent = article.title;
+    title.classList.add('article-title');
     articleElement.appendChild(title);
 
     const authorDateContainer = document.createElement('p');
@@ -52,7 +53,7 @@ function createArticleElement(article, category, container, issueNumber) {
 
     const author = document.createElement('span');
     author.textContent = article.author;
-    author.classList.add('author');
+    author.classList.add('article-author');
     authorDateContainer.appendChild(author);
 
     const separator = document.createElement('span');
@@ -61,7 +62,7 @@ function createArticleElement(article, category, container, issueNumber) {
 
     const date = document.createElement('span');
     date.textContent = formatDate(issueNumber);
-    date.classList.add('date');
+    date.classList.add('article-date');
     authorDateContainer.appendChild(date);
 
     articleElement.appendChild(authorDateContainer);
