@@ -31,8 +31,8 @@ header .container {
 
 .logo {
     max-height: 50px; /* Adjust as needed */
-    width: 85%; /* Make the logo occupy 85% of the container */
-    margin: 0 auto;
+    width: 80%; /* Make the logo occupy 80% of the container */
+    margin: 0 10px; /* Adjust margin to reduce space between logo and dropdown menu */
 }
 
 .nav-icons {
@@ -51,7 +51,7 @@ header .container {
 .menu-toggle {
     font-size: 24px; /* Adjust as needed */
     position: absolute;
-    left: 15px;
+    left: 10px; /* Reduce space between menu and logo */
     top: 10px;
 }
 
