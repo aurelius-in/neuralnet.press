@@ -31,8 +31,8 @@ body {
 
 .logo {
     max-height: 50px; /* Adjust as needed */
-    width: 65%; /* Make the logo occupy 65% of the container */
-    margin: 0 10px; /* Adjust margin to reduce space between logo and dropdown menu */
+    max-width: 65%; /* Ensure the logo retains its aspect ratio */
+    margin: 0 auto; /* Center the logo */
 }
 
 .nav-icons {
@@ -55,14 +55,18 @@ body {
     top: 10px;
 }
 
-.nav-links {
+nav {
     display: none;
-    flex-direction: column;
-    gap: 10px;
 }
 
 .nav-links.active {
+    display: block;
+}
+
+.nav-links ul {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 main {
