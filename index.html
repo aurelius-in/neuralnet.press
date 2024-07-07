@@ -1,4 +1,3 @@
-<!-- index.html and other HTML files -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +7,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/articles.css">
-    <link rel="stylesheet" href="styles/headers.css">
 </head>
 <body>
-    <div id="topbar"></div>
+    <header id="topbar"></header>
     <main>
         <div class="container">
-            <!-- Content goes here -->
+            <h2>Past Issues</h2>
+            <div id="issues" class="issues">
+                <!-- Issues will be loaded here dynamically -->
+            </div>
         </div>
     </main>
     <footer>
@@ -22,7 +23,12 @@
             <p>&copy; 2024 NeuralNet Press. All rights reserved.</p>
         </div>
     </footer>
-    <script src="scripts/topbar.js"></script>
+    <script>
+        // Load topbar
+        fetch('topbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('topbar').innerHTML = data);
+    </script>
     <script src="scripts/issues.js"></script>
     <script src="scripts/main.js"></script>
 </body>
