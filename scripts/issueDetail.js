@@ -73,21 +73,20 @@ function createArticleElement(article, category, container, issueNumber) {
     articleElement.appendChild(image);
 
     const content = document.createElement('div');
-    content.innerHTML = article.content;
+    content.innerHTML = trimContent(article.content, 200).trimmedText;
     content.classList.add('article-content');
     articleElement.appendChild(content);
 
-    const trimmedContent = trimContent(article.content, 200);
-    content.innerHTML = trimmedContent.trimmedText;
-
-    if (trimmedContent.remainingText) {
+    const remainingText = trimContent(article.content, 200).remainingText;
+    if (remainingText) {
         const readMoreButton = document.createElement('button');
         readMoreButton.textContent = 'Read More';
         readMoreButton.classList.add('read-more');
         readMoreButton.addEventListener('click', function() {
-            const additionalContent = trimContent(trimmedContent.remainingText, 200);
+            const additionalContent = trimContent(remainingText, 200);
             content.innerHTML += additionalContent.trimmedText;
-            if (!additionalContent.remainingText) {
+            remainingText = additionalContent.remainingText;
+            if (!remainingText) {
                 readMoreButton.style.display = 'none';
             }
         });
