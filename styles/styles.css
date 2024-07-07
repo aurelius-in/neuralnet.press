@@ -13,7 +13,7 @@ body {
     padding: 0 15px;
 }
 
-header .container {
+.header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,10 +30,10 @@ header .container {
 }
 
 .logo {
-    max-height: 50px; /* Adjust as needed */
+    max-height: 50px;
     width: auto;
-    max-width: 65%; /* Ensure the logo retains its aspect ratio */
-    margin: 0 10px; /* Center the logo */
+    max-width: 65%;
+    margin: 0 auto;
 }
 
 .nav-icons {
@@ -46,24 +46,24 @@ header .container {
 
 .nav-icons a {
     text-decoration: none;
-    font-size: 24px; /* Adjust as needed */
+    font-size: 24px;
 }
 
 .menu-toggle {
-    font-size: 24px; /* Adjust as needed */
+    font-size: 24px;
     position: absolute;
-    left: 10px; /* Reduce space between menu and logo */
+    left: 10px;
     top: 10px;
-    cursor: pointer; /* Add pointer cursor */
+    cursor: pointer;
 }
 
 .nav-links {
     display: none;
     flex-direction: column;
     gap: 10px;
-    background-color: white; /* Match header background */
+    background-color: white;
     position: absolute;
-    top: 60px; /* Position below header */
+    top: 60px;
     left: 0;
     right: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -77,24 +77,24 @@ header .container {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 10px 0; /* Add padding for better spacing */
+    padding: 10px 0;
     list-style: none;
     margin: 0;
-    text-align: center; /* Center the links */
+    text-align: center;
 }
 
 .nav-links ul li a {
     text-decoration: none;
-    color: #003789; /* Adjust link color */
+    color: #003789;
 }
 
 main {
-    padding-top: 70px; /* Adjust this value based on the height of your header */
+    padding-top: 70px;
 }
 
 footer {
-    background-color: white; /* Set footer background to white */
-    color: #003789; /* Adjust text color if needed */
+    background-color: white;
+    color: #003789;
     padding: 10px 0;
     text-align: center;
 }
