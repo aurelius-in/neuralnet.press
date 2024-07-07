@@ -9,7 +9,19 @@
     <link rel="stylesheet" href="styles/articles.css">
 </head>
 <body>
-    <header id="topbar"></header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('topbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML('afterbegin', data);
+                    document.getElementById('menu-toggle').addEventListener('click', function() {
+                        document.getElementById('nav-links').classList.toggle('active');
+                    });
+                })
+                .catch(error => console.error('Error loading topbar:', error));
+        });
+    </script>
     <main>
         <div class="container">
             <h2>Past Issues</h2>
@@ -23,12 +35,6 @@
             <p>&copy; 2024 NeuralNet Press. All rights reserved.</p>
         </div>
     </footer>
-    <script>
-        // Load topbar
-        fetch('topbar.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('topbar').innerHTML = data);
-    </script>
     <script src="scripts/issues.js"></script>
     <script src="scripts/main.js"></script>
 </body>
