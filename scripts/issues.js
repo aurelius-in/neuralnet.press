@@ -1,7 +1,12 @@
 // issues.js
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('../data/issues.json')
-        .then(response => response.json())
+    fetch('data/issues.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(issueNumbers => {
             const issuesContainer = document.getElementById('issues');
             issueNumbers.forEach(issueNumber => {
@@ -9,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 issueElement.classList.add('issue');
 
                 const issueLink = document.createElement('a');
-                issueLink.href = `../articles/issueDetail.html?issue=${issueNumber}`; // Ensure this path is correct
+                issueLink.href = `articles/issueDetail.html?issue=${issueNumber}`;
 
                 const issueImage = document.createElement('img');
-                issueImage.src = `../images/${issueNumber}thumb.png`;
+                issueImage.src = `images/${issueNumber}thumb.png`;
                 issueImage.alt = `${issueNumber} Thumbnail`;
                 issueImage.classList.add('issue-thumb');
 
