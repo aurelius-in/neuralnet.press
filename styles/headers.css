@@ -10,12 +10,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .logo {
     max-height: 50px;
     object-fit: contain;
-    margin-left: 20px; /* Add margin to the left */
+    margin-left: 10px; /* Adjust margin to prevent overlap */
 }
 
 .menu-toggle {
@@ -24,8 +26,9 @@ header {
     font-size: 24px;
     cursor: pointer;
     color: #003789; /* Match the main color theme */
-    margin-right: 20px; /* Add margin to prevent overlap */
-    padding-right: 10px; /* Add padding to the right */
+    margin-left: auto; /* Push the menu button to the right */
+    padding-left: 10px; /* Add padding to the left */
+    padding-right: 20px; /* Add padding to the right */
 }
 
 .nav-icons {
