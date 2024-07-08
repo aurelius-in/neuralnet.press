@@ -1,207 +1,125 @@
-/* articles.css */
+/* Articles CSS */
+
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #003789;
     color: #fff;
+    background-color: #001f3f;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.header {
-    background-color: white;
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    max-height: 50px; /* Adjust as needed */
-    width: 65%; /* Adjust percentage for better fit */
-    margin: 0 10px 0 15px; /* Add left margin to avoid overlap with menu button */
-    object-fit: contain; /* Maintain aspect ratio */
-}
-
-.nav-icons {
+header {
     display: flex;
-    gap: 15px;
-    position: absolute;
-    right: 15px;
-    top: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+    background-color: #fff;
+    box-shadow: 0 4px 2px -2px gray;
 }
 
-.nav-icons a {
-    text-decoration: none;
-    font-size: 24px; /* Adjust as needed */
+header img {
+    height: 40px;
+    margin-right: 10px;
 }
 
-.menu-toggle {
-    font-size: 24px; /* Adjust as needed */
-    position: absolute;
-    left: 10px; /* Reduce space between menu and logo */
-    top: 10px;
-    padding: 0; /* Remove default button padding */
-}
-
-.nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    background-color: rgba(255, 255, 255, 0.5); /* 50% transparent */
-    position: absolute;
-    left: 0;
-    top: 60px; /* Adjust based on header height */
-    width: auto; /* Fit to content */
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.nav-links.active {
+nav {
     display: flex;
+    align-items: center;
 }
 
-.nav-links a {
-    color: #003789; /* Blue text color */
+nav a {
+    color: #001f3f;
     text-decoration: none;
-    padding: 10px 15px;
-    display: block;
+    margin: 0 10px;
     font-weight: bold;
-    font-size: 14px; /* Smaller text size */
 }
 
-.nav-links a:hover {
-    background-color: #f1f1f1; /* Light gray on hover */
+nav a:hover {
+    text-decoration: underline;
 }
 
-main {
-    padding-top: 70px; /* Adjust this value based on the height of your header */
+.menu-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+        background: none;
+        border: none;
+        color: #001f3f;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 2px -2px gray;
+    }
+
+    nav a {
+        margin: 15px 0;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    nav a:hover {
+        text-decoration: none;
+        background-color: #f0f0f0;
+    }
 }
 
 footer {
-    background-color: white; /* Set footer background to white */
-    color: #003789; /* Adjust text color if needed */
-    padding: 10px 0;
+    background-color: #001f3f;
+    color: #fff;
     text-align: center;
-}
-
-.article-image {
+    padding: 1em 0;
+    position: absolute;
     width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
+    bottom: 0;
 }
 
-.header-image {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+.content {
+    padding: 2em;
 }
 
-.article-title {
-    font-size: 1.5rem; /* Main heading size */
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 10px;
-    color: #ffcc66; /* Light yellow color for the title */
-}
-
-.article-author {
-    font-style: normal; /* Not italic */
-    font-weight: bold; /* Bold */
-    color: #fff; /* White color for author name */
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.article-date {
-    font-style: normal; /* Not italic */
-    font-weight: bold; /* Bold */
-    color: #ff9900; /* Light orange color for the date */
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.articles {
+.issue {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
-    background-color: #003789; /* Blue background to match the larger background area */
-    padding: 0; /* Remove padding */
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 2em;
 }
 
-.article {
-    width: calc(100% - 6px); /* Adjusting width to fit the visible space */
-    max-width: 800px; /* Ensure it takes full width */
-    background: #003789; /* Match the background color */
-    color: #fff; /* White color for text in articles */
-    padding: 20px; /* Adjust padding for better spacing */
-    margin: 0; /* Remove all margins */
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+.issue img {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.article-content {
-    text-align: left;
-    padding: 10px; /* Adding padding to prevent text from touching the edges */
-    line-height: 1.6; /* Adjust line spacing */
-    margin-bottom: 10px; /* Reduce space between paragraphs */
+.issue h2 {
+    color: #ff851b;
+    margin-top: 1em;
+    font-size: 24px;
 }
 
-/* Subheading Style */
-.article-content h2 {
-    font-size: 1.25rem; /* Subheading size, smaller than main heading */
-    font-weight: 600;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    color: #ff9900; /* Light orange color for subheadings */
-}
-
-/* Reducing the margins around the article container */
-.articles {
-    margin: 0; /* No outer margin */
-    padding: 0; /* No padding */
-}
-
-/* Additional styles for the container */
-.container {
-    padding: 0 3px; /* Narrow padding for the container */
-}
-
-/* Adding top padding to the main content to avoid being obscured by the header */
-main {
-    padding-top: 70px; /* Adjust this value based on the height of your header */
-}
-
-/* Read More Button */
-.read-more {
-    display: block;
-    margin: 10px auto;
-    padding: 10px 20px;
-    background-color: #ff9900;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
+.about, .contact {
+    margin-top: 2em;
     text-align: center;
 }
 
-.read-more:hover {
-    background-color: #cc7a00;
+.contact a {
+    color: #ff851b;
+    text-decoration: none;
 }
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Add your additional styles here */
