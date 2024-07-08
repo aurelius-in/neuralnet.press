@@ -4,7 +4,7 @@ header.issue-detail-header {
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    padding: 10px 20px;
+    padding: 10px 0 10px 10px; /* Adjust padding to be flush on the left */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
@@ -13,13 +13,13 @@ header.issue-detail-header {
 }
 
 header.issue-detail-header .menu-toggle {
-    margin-right: 10px; /* Adjust space to the right */
-    padding-left: 10px; /* Remove additional padding */
-    padding-right: 15px; /* Add space from left edge */
+    margin-left: 10px; /* Adjust space to the left */
+    margin-right: 20px; /* Adjust space to the right */
+    padding: 0;
 }
 
 header.issue-detail-header .logo {
-    margin-left: 20px; /* Add more space to the left */
+    margin-left: 10px; /* Small margin to the left */
 }
 
 header.issue-detail-header .nav-icons {
