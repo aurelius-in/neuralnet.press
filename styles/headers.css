@@ -24,7 +24,8 @@ header {
     font-size: 24px;
     cursor: pointer;
     color: #003789; /* Match the main color theme */
-    margin-right: 10px; /* Add margin to prevent overlap */
+    margin-right: 20px; /* Add margin to prevent overlap */
+    padding-right: 10px; /* Add padding to the right */
 }
 
 .nav-icons {
