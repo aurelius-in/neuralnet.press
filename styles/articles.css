@@ -1,22 +1,6 @@
 /* articles.css */
-header.issue-detail-header {
-    padding-left: 40px; /* Increase padding on left edge for issueDetail page */
-    padding-right: 10px; /* Decrease padding on right edge */
-}
 
-header.issue-detail-header .menu-toggle {
-    margin-right: 10px; /* Move menu button closer to the left edge */
-    padding-left: 0; /* Remove additional padding */
-}
-
-header.issue-detail-header .logo {
-    margin-left: 40px; /* Increase margin to the left */
-}
-
-header.issue-detail-header .nav-icons {
-    margin-right: 40px; /* Increase margin to the right edge */
-}
-
+/* General article styles */
 .article-image {
     width: 100%;
     max-width: 600px;
@@ -35,25 +19,25 @@ header.issue-detail-header .nav-icons {
 }
 
 .article-title {
-    font-size: 1.5rem; /* Main heading size */
+    font-size: 1.5rem;
     font-weight: 700;
     text-align: center;
     margin-bottom: 10px;
-    color: #ffcc66; /* Light yellow color for the title */
+    color: #ffcc66;
 }
 
 .article-author {
-    font-style: normal; /* Not italic */
-    font-weight: bold; /* Bold */
-    color: #fff; /* White color for author name */
+    font-style: normal;
+    font-weight: bold;
+    color: #fff;
     margin-bottom: 5px;
     text-align: center;
 }
 
 .article-date {
-    font-style: normal; /* Not italic */
-    font-weight: bold; /* Bold */
-    color: #ff9900; /* Light orange color for the date */
+    font-style: normal;
+    font-weight: bold;
+    color: #ff9900;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -63,57 +47,52 @@ header.issue-detail-header .nav-icons {
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    background-color: #003789; /* Blue background to match the larger background area */
-    padding: 0; /* Remove padding */
+    background-color: #003789;
+    padding: 0;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .article {
-    width: calc(100% - 6px); /* Adjusting width to fit the visible space */
-    max-width: 800px; /* Ensure it takes full width */
-    background: #003789; /* Match the background color */
-    color: #fff; /* White color for text in articles */
-    padding: 20px; /* Adjust padding for better spacing */
-    margin: 0; /* Remove all margins */
+    width: calc(100% - 6px);
+    max-width: 800px;
+    background: #003789;
+    color: #fff;
+    padding: 20px;
+    margin: 0;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .article-content {
     text-align: left;
-    padding: 10px; /* Adding padding to prevent text from touching the edges */
-    line-height: 1.6; /* Adjust line spacing */
-    margin-bottom: 10px; /* Reduce space between paragraphs */
+    padding: 10px;
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
 
-/* Subheading Style */
 .article-content h2 {
-    font-size: 1.25rem; /* Subheading size, smaller than main heading */
+    font-size: 1.25rem;
     font-weight: 600;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 10px;
-    color: #ff9900; /* Light orange color for subheadings */
+    color: #ff9900;
 }
 
-/* Reducing the margins around the article container */
 .articles {
-    margin: 0; /* No outer margin */
-    padding: 0; /* No padding */
+    margin: 0;
+    padding: 0;
 }
 
-/* Additional styles for the container */
 .container {
-    padding: 0 3px; /* Narrow padding for the container */
+    padding: 0 3px;
 }
 
-/* Adding top padding to the main content to avoid being obscured by the header */
 main {
-    padding-top: 70px; /* Adjust this value based on the height of your header */
+    padding-top: 70px;
 }
 
-/* Read More Button */
 .read-more {
     display: block;
     margin: 10px auto;
@@ -129,4 +108,23 @@ main {
 
 .read-more:hover {
     background-color: #cc7a00;
+}
+
+/* Specific styles for issueDetail.html topbar */
+header.issue-detail-header {
+    padding-left: 50px; /* Increase padding on left edge for issueDetail page */
+    padding-right: 20px; /* Ensure there is space on the right edge */
+}
+
+header.issue-detail-header .menu-toggle {
+    margin-right: 5px; /* Move menu button closer to the left edge */
+    padding-left: 0; /* Remove additional padding */
+}
+
+header.issue-detail-header .logo {
+    margin-left: 50px; /* Increase margin to the left */
+}
+
+header.issue-detail-header .nav-icons {
+    margin-right: 50px; /* Increase margin to the right edge */
 }
