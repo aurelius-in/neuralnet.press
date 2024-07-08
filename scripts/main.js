@@ -3,7 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const articlesContainer = document.getElementById('articles');
 
     fetch('data/issues.json')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(issues => {
             issues.forEach(issue => {
                 const issueElement = document.createElement('div');
