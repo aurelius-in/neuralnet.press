@@ -1,6 +1,7 @@
 // loadTopbar.js
 document.addEventListener('DOMContentLoaded', function() {
     const pathToTopbar = location.pathname.includes('articles') ? '../topbar.html' : 'topbar.html';
+    console.log('Loading topbar from:', pathToTopbar);
 
     fetch(pathToTopbar)
         .then(response => {
