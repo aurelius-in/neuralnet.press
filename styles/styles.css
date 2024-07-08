@@ -104,4 +104,12 @@ footer {
 .issue-date a {
     color: #fff; /* White color for issue date links */
     font-weight: bold; /* Make text bold */
+    text-decoration: none; /* Remove underline */
+    font-size: 14px; /* Make text smaller */
+    display: block;
+    text-align: center; /* Center the text */
+}
+
+.issue {
+    text-align: center; /* Center the issue thumbnail */
 }
