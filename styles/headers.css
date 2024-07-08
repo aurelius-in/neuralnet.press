@@ -15,7 +15,7 @@ header {
 .logo {
     max-height: 50px;
     object-fit: contain;
-    margin-left: 10px; /* Add margin to prevent overlap */
+    margin-left: 20px; /* Add margin to the left */
 }
 
 .menu-toggle {
