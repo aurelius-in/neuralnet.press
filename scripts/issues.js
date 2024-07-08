@@ -1,13 +1,16 @@
 // issues.js
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Document loaded, fetching issues.json');
     fetch('data/issues.json')
         .then(response => {
+            console.log('Response received from issues.json:', response);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             return response.json();
         })
         .then(issueNumbers => {
+            console.log('Issues data:', issueNumbers);
             const issuesContainer = document.getElementById('issues');
             issueNumbers.forEach(issueNumber => {
                 const issueElement = document.createElement('div');
