@@ -1,21 +1,27 @@
 /* headers.css */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+header {
     background-color: white;
-    padding: 10px 20px;
+    padding: 10px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
-    max-height: 50px; /* Adjust as needed */
-    width: 65%; /* Adjust percentage for better fit */
-    object-fit: contain; /* Maintain aspect ratio */
+    max-height: 50px;
+    object-fit: contain;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .nav-icons {
@@ -25,37 +31,36 @@
 
 .nav-icons a {
     text-decoration: none;
-    font-size: 24px; /* Adjust as needed */
-}
-
-.menu-toggle {
-    font-size: 24px; /* Adjust as needed */
+    font-size: 24px;
+    color: #003789; /* Match the main color theme */
 }
 
 .nav-links {
     display: none;
     flex-direction: column;
-    gap: 10px;
-    background-color: white; /* Ensure background color for dropdown */
     position: absolute;
-    left: 0;
     top: 60px; /* Adjust based on header height */
-    width: 100%; /* Full width dropdown */
-    padding: 10px 0;
+    right: 0;
+    background-color: white;
+    width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
 }
 
 .nav-links.active {
     display: flex;
 }
 
-.nav-links a {
-    color: #003789; /* Blue text color */
-    text-decoration: none;
+.nav-links li {
+    list-style: none;
     padding: 10px 15px;
-    display: block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #003789;
 }
 
 .nav-links a:hover {
-    background-color: #f1f1f1; /* Light gray on hover */
+    background-color: #f1f1f1;
 }
