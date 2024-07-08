@@ -122,4 +122,127 @@ footer {
     text-decoration: underline;
 }
 
-/* Add your additional styles here */
+/* Additional styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+    background-color: #fff;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+header img {
+    height: 40px;
+    margin-left: 10px; /* Adjusted for spacing */
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: #001f3f;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.menu-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+        background: none;
+        border: none;
+        color: #001f3f;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 2px -2px gray;
+    }
+
+    nav a {
+        margin: 15px 0;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    nav a:hover {
+        text-decoration: none;
+        background-color: #f0f0f0;
+    }
+}
+
+footer {
+    background-color: #001f3f;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.content {
+    padding: 2em;
+}
+
+.issue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.issue img {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.issue h2 {
+    color: #ff851b;
+    margin-top: 1em;
+    font-size: 24px;
+}
+
+.about, .contact {
+    margin-top: 2em;
+    text-align: center;
+}
+
+.contact a {
+    color: #ff851b;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+header div a {
+    margin-left: 10px; /* Adjust spacing for icons */
+}
