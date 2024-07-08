@@ -5,12 +5,16 @@ body {
     padding: 0;
     background-color: #003789;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+    flex: 1; /* Ensures the container takes up remaining space */
 }
 
 header .container {
@@ -86,6 +90,7 @@ header .container {
 
 main {
     padding-top: 70px; /* Adjust this value based on the height of your header */
+    flex: 1; /* Ensures the main content takes up remaining space */
 }
 
 footer {
@@ -93,4 +98,10 @@ footer {
     color: #003789; /* Adjust text color if needed */
     padding: 10px 0;
     text-align: center;
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+.issue-date a {
+    color: #fff; /* White color for issue date links */
+    font-weight: bold; /* Make text bold */
 }
