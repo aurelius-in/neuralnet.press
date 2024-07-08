@@ -1,6 +1,6 @@
 // issues.js
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('data/issues.json')
+    fetch('../data/issues.json')
         .then(response => response.json())
         .then(issueNumbers => {
             const issuesContainer = document.getElementById('issues');
@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 issueElement.classList.add('issue');
 
                 const issueLink = document.createElement('a');
-                issueLink.href = `articles/issueDetail.html?issue=${issueNumber}`;
+                issueLink.href = `../articles/issueDetail.html?issue=${issueNumber}`; // Ensure this path is correct
 
                 const issueImage = document.createElement('img');
-                issueImage.src = `images/${issueNumber}thumb.png`;
+                issueImage.src = `../images/${issueNumber}thumb.png`;
                 issueImage.alt = `${issueNumber} Thumbnail`;
                 issueImage.classList.add('issue-thumb');
 
