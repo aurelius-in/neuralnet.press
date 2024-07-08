@@ -1,4 +1,22 @@
 /* articles.css */
+header.issue-detail-header {
+    padding-left: 40px; /* Increase padding on left edge for issueDetail page */
+    padding-right: 10px; /* Decrease padding on right edge */
+}
+
+header.issue-detail-header .menu-toggle {
+    margin-right: 10px; /* Move menu button closer to the left edge */
+    padding-left: 0; /* Remove additional padding */
+}
+
+header.issue-detail-header .logo {
+    margin-left: 40px; /* Increase margin to the left */
+}
+
+header.issue-detail-header .nav-icons {
+    margin-right: 40px; /* Increase margin to the right edge */
+}
+
 .article-image {
     width: 100%;
     max-width: 600px;
