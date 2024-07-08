@@ -1,248 +1,117 @@
-/* Articles CSS */
-
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #fff;
-    background-color: #001f3f;
+    background-color: #f4f4f4;
 }
 
 header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #cccccc;
+    padding: 10px 0;
+}
+
+.topbar-container {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 1em;
-    background-color: #fff;
-    box-shadow: 0 4px 2px -2px gray;
+    padding: 0 10px;
 }
 
-header img {
+.logo {
     height: 40px;
-    margin-right: 10px;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-}
-
-nav a {
-    color: #001f3f;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
+    margin-left: 10px;
 }
 
 .menu-button {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .menu-button {
-        display: block;
-        background: none;
-        border: none;
-        color: #001f3f;
-        font-size: 24px;
-        cursor: pointer;
-    }
-
-    nav {
-        display: none;
-        flex-direction: column;
-        background-color: rgba(255, 255, 255, 0.9);
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        box-shadow: 0 4px 2px -2px gray;
-    }
-
-    nav a {
-        margin: 15px 0;
-        padding: 15px 0;
-        text-align: center;
-    }
-
-    nav a:hover {
-        text-decoration: none;
-        background-color: #f0f0f0;
-    }
-}
-
-footer {
-    background-color: #001f3f;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-}
-
-.content {
-    padding: 2em;
-}
-
-.issue {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2em;
-}
-
-.issue img {
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.issue h2 {
-    color: #ff851b;
-    margin-top: 1em;
-    font-size: 24px;
-}
-
-.about, .contact {
-    margin-top: 2em;
-    text-align: center;
-}
-
-.contact a {
-    color: #ff851b;
-    text-decoration: none;
-}
-
-.contact a:hover {
-    text-decoration: underline;
-}
-
-/* Additional styles */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1em;
-    background-color: #fff;
-    box-shadow: 0 4px 2px -2px gray;
-}
-
-header img {
+    background: url('../images/menu-icon.png') no-repeat center center;
+    background-size: contain;
+    width: 40px;
     height: 40px;
-    margin-left: 10px; /* Adjusted for spacing */
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.search-icon, .profile-icon {
+    height: 30px;
     margin-right: 10px;
 }
 
-nav {
-    display: flex;
-    align-items: center;
+nav.menu {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    width: auto;
+    padding: 10px;
 }
 
-nav a {
-    color: #001f3f;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-.menu-button {
+nav.menu.hidden {
     display: none;
 }
 
-@media (max-width: 768px) {
-    .menu-button {
-        display: block;
-        background: none;
-        border: none;
-        color: #001f3f;
-        font-size: 24px;
-        cursor: pointer;
-    }
+nav.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-    nav {
-        display: none;
-        flex-direction: column;
-        background-color: rgba(255, 255, 255, 0.9);
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        box-shadow: 0 4px 2px -2px gray;
-    }
+nav.menu ul li {
+    margin: 5px 0;
+}
 
-    nav a {
-        margin: 15px 0;
-        padding: 15px 0;
-        text-align: center;
-    }
+nav.menu ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    font-size: 14px;
+}
 
-    nav a:hover {
-        text-decoration: none;
-        background-color: #f0f0f0;
-    }
+main {
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+#articleImage img {
+    width: 100%;
+    height: auto;
 }
 
 footer {
-    background-color: #001f3f;
-    color: #fff;
     text-align: center;
-    padding: 1em 0;
+    padding: 10px;
+    background-color: #ffffff;
+    border-top: 1px solid #cccccc;
     position: absolute;
-    width: 100%;
     bottom: 0;
+    width: 100%;
 }
 
-.content {
-    padding: 2em;
-}
-
-.issue {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2em;
-}
-
-.issue img {
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.issue h2 {
-    color: #ff851b;
-    margin-top: 1em;
-    font-size: 24px;
-}
-
-.about, .contact {
-    margin-top: 2em;
+#issueTitle, #articleTitle, #authorDate {
     text-align: center;
 }
 
-.contact a {
-    color: #ff851b;
-    text-decoration: none;
+#issueTitle {
+    color: #ff6600;
 }
 
-.contact a:hover {
-    text-decoration: underline;
+#articleTitle {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-header div {
-    display: flex;
-    align-items: center;
+#authorDate {
+    font-size: 14px;
+    color: #666666;
 }
 
-header div a {
-    margin-left: 10px; /* Adjust spacing for icons */
+#articleContent {
+    font-size: 16px;
+    color: #333333;
 }
