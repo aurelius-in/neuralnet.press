@@ -1,7 +1,6 @@
 // loadTopbar.js
 document.addEventListener('DOMContentLoaded', function() {
     const pathToTopbar = location.pathname.includes('/articles/') ? '../topbar.html' : 'topbar.html';
-    const headerElement = location.pathname.includes('/articles/') ? document.querySelector('.issue-detail-header') : document.querySelector('header');
     console.log('Loading topbar from:', pathToTopbar);
 
     fetch(pathToTopbar)
@@ -20,10 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
             menuToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
             });
-
-            if (headerElement) {
-                headerElement.appendChild(document.getElementById('topbar-placeholder').children[0]);
-            }
         })
         .catch(error => console.error('Error loading topbar:', error));
 });
