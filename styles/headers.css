@@ -10,14 +10,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 20px; /* Increase padding on left edge */
-    padding-right: 20px; /* Increase padding on right edge */
+    padding-left: 30px; /* Increase padding on left edge */
+    padding-right: 30px; /* Increase padding on right edge */
 }
 
 .logo {
     max-height: 50px;
     object-fit: contain;
-    margin-left: 20px; /* Increase margin to the left */
+    margin-left: 30px; /* Increase margin to the left */
 }
 
 .menu-toggle {
@@ -32,7 +32,7 @@ header {
 .nav-icons {
     display: flex;
     gap: 15px;
-    margin-right: 20px; /* Add margin to the right edge */
+    margin-right: 30px; /* Add margin to the right edge */
 }
 
 .nav-icons a {
