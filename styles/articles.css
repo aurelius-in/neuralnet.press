@@ -1,117 +1,125 @@
-/* General styles */
+/* Articles CSS */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    color: #fff;
+    background-color: #001f3f;
 }
 
 header {
-    background-color: #ffffff;
-    border-bottom: 1px solid #cccccc;
-    padding: 10px 0;
-}
-
-.topbar-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 10px;
+    align-items: center;
+    padding: 0 1em;
+    background-color: #fff;
+    box-shadow: 0 4px 2px -2px gray;
 }
 
-.logo {
+header img {
     height: 40px;
-    margin-left: 10px;
-}
-
-.menu-button {
-    background: url('../images/menu-icon.png') no-repeat center center;
-    background-size: contain;
-    width: 40px;
-    height: 40px;
-    border: none;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-.search-icon, .profile-icon {
-    height: 30px;
     margin-right: 10px;
 }
 
-nav.menu {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 5px;
-    position: absolute;
-    top: 60px;
-    left: 10px;
-    width: auto;
-    padding: 10px;
+nav {
+    display: flex;
+    align-items: center;
 }
 
-nav.menu.hidden {
+nav a {
+    color: #001f3f;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.menu-button {
     display: none;
 }
 
-nav.menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+        background: none;
+        border: none;
+        color: #001f3f;
+        font-size: 24px;
+        cursor: pointer;
+    }
 
-nav.menu ul li {
-    margin: 5px 0;
-}
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 2px -2px gray;
+    }
 
-nav.menu ul li a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #000;
-    font-size: 14px;
-}
+    nav a {
+        margin: 15px 0;
+        padding: 15px 0;
+        text-align: center;
+    }
 
-main {
-    padding: 20px;
-}
-
-h1, h2, h3 {
-    color: #333;
-}
-
-#articleImage img {
-    width: 100%;
-    height: auto;
+    nav a:hover {
+        text-decoration: none;
+        background-color: #f0f0f0;
+    }
 }
 
 footer {
+    background-color: #001f3f;
+    color: #fff;
     text-align: center;
-    padding: 10px;
-    background-color: #ffffff;
-    border-top: 1px solid #cccccc;
+    padding: 1em 0;
     position: absolute;
-    bottom: 0;
     width: 100%;
+    bottom: 0;
 }
 
-#issueTitle, #articleTitle, #authorDate {
+.content {
+    padding: 2em;
+}
+
+.issue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.issue img {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.issue h2 {
+    color: #ff851b;
+    margin-top: 1em;
+    font-size: 24px;
+}
+
+.about, .contact {
+    margin-top: 2em;
     text-align: center;
 }
 
-#issueTitle {
-    color: #ff6600;
+.contact a {
+    color: #ff851b;
+    text-decoration: none;
 }
 
-#articleTitle {
-    font-size: 24px;
-    font-weight: bold;
+.contact a:hover {
+    text-decoration: underline;
 }
 
-#authorDate {
-    font-size: 14px;
-    color: #666666;
-}
-
-#articleContent {
-    font-size: 16px;
-    color: #333333;
-}
+/* Add your additional styles here */
