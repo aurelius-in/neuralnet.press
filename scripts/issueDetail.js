@@ -1,47 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Issue Details - NeuralNet Press</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="stylesheet" href="../styles/headers.css">
-    <link rel="stylesheet" href="../styles/articles.css">
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <button class="menu-toggle" id="menu-toggle">☰</button>
-            <img src="../images/nnlogo.png" alt="NeuralNet Press Logo" class="logo">
-            <div class="nav-icons">
-                <a href="#"><span class="magnifying-glass">🔍</span></a>
-                <a href="#"><span class="profile-icon">👤</span></a>
-            </div>
-            <nav>
-                <ul id="nav-links" class="nav-links">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../issues.html">Issues</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <div class="container">
-            <h2 id="issue-title"></h2>
-            <div id="articles" class="articles">
-                <!-- Articles will be loaded here dynamically -->
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 NeuralNet Press. All rights reserved.</p>
-        </div>
-    </footer>
-    <script src="../scripts/issueDetail.js"></script>
-    <script src="../scripts/main.js"></script>
-</body>
-</html>
+// issueDetail.js
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const issueNumber = urlParams.get('issue');
+    if (!issueNumber) {
+        console.error('Issue number not provided in the URL');
+        return;
+    }
+
+    document.getElementById('issue-title').textContent = `Issue: ${formatDate(issueNumber)}`;
+
+    const categories = [
+        'startups', 'research', 'industry', 'robotics', 'policy', 
+        'entertainment', 'cybersecurity', 'events', 'environment', 
+        'society', 'collaborations', 'education', 'ethics', 'healthcare'
+    ];
+    const articlesContainer = document.getElementById('articles');
+
+    categories.forEach(category => {
+        fetch(`../data/${issueNumber}${category}.json`)
+            .then(response => response.json())
+            .then(article => {
+                createArticleElement(article, category, articlesContainer, issueNumber);
+            })
+            .catch(error => console.error(`Error loading ${category} article for issue ${issueNumber}:`, error));
+    });
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+});
+
+function createArticleElement(article, category, container, issueNumber) {
+    const articleElement = document.createElement('div');
+    articleElement.classList.add('article');
+
+    const headerImage = document.createElement('img');
+    headerImage.src = `../images/${category}_.png`;
+    headerImage.alt = `${category.charAt(0).toUpperCase() + category.slice(1)} Header Image`;
+    headerImage.classList.add('header-image');
+    articleElement.appendChild(headerImage);
+
+    const title = document.createElement('h2');
+    title.textContent = article.title;
+    title.classList.add('article-title');
+    articleElement.appendChild(title);
+
+    const authorDateContainer = document.createElement('p');
+    authorDateContainer.classList.add('author-date-container');
+
+    const author = document.createElement('span');
+    author.textContent = article.author;
+    author.classList.add('article-author');
+    authorDateContainer.appendChild(author);
+
+    const separator = document.createElement('span');
+    separator.textContent = ' ● ';
+    authorDateContainer.appendChild(separator);
+
+    const date = document.createElement('span');
+    date.textContent = formatDate(issueNumber);
+    date.classList.add('article-date');
+    authorDateContainer.appendChild(date);
+
+    articleElement.appendChild(authorDateContainer);
+
+    const image = document.createElement('img');
+    image.src = `../images/${issueNumber}${category}.png`;
+    image.alt = `${article.title} Image`;
+    image.classList.add('article-image');
+    articleElement.appendChild(image);
+
+    const content = document.createElement('div');
+    const trimmedContent = trimContent(article.content, 200);
+    content.innerHTML = trimmedContent.trimmedText;
+    content.classList.add('article-content');
+    articleElement.appendChild(content);
+
+    let remainingText = trimmedContent.remainingText;
+    if (remainingText) {
+        const readMoreButton = document.createElement('button');
+        readMoreButton.textContent = 'Read More';
+        readMoreButton.classList.add('read-more');
+        readMoreButton.addEventListener('click', function() {
+            const additionalContent = trimContent(remainingText, 200);
+            content.innerHTML += additionalContent.trimmedText;
+            remainingText = additionalContent.remainingText;
+            if (!remainingText) {
+                readMoreButton.style.display = 'none';
+            }
+        });
+        articleElement.appendChild(readMoreButton);
+    }
+
+    container.appendChild(articleElement);
+}
+
+function trimContent(content, wordLimit) {
+    const words = content.split(/\s+/);
+    if (words.length > wordLimit) {
+        const trimmedText = words.slice(0, wordLimit).join(' ');
+        const remainingText = words.slice(wordLimit).join(' ');
+        return { trimmedText, remainingText };
+    }
+    return { trimmedText: content, remainingText: '' };
+}
+
+function formatDate(issueNumber) {
+    const year = `20${issueNumber.slice(0, 2)}`;
+    const month = issueNumber.slice(2);
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    return `${monthNames[parseInt(month) - 1]} ${year}`;
+}
