@@ -1,5 +1,3 @@
-/* articles.css */
-
 /* General article styles */
 .article-image {
     width: 100%;
@@ -112,19 +110,19 @@ main {
 
 /* Specific styles for issueDetail.html topbar */
 header.issue-detail-header {
-    padding-left: 50px; /* Increase padding on left edge for issueDetail page */
-    padding-right: 20px; /* Ensure there is space on the right edge */
+    padding-left: 10px; /* Small padding on left edge */
+    padding-right: 10px; /* Ensure there is space on the right edge */
 }
 
 header.issue-detail-header .menu-toggle {
-    margin-right: 5px; /* Move menu button closer to the left edge */
+    margin-right: 0; /* Move menu button closer to the left edge */
     padding-left: 0; /* Remove additional padding */
 }
 
 header.issue-detail-header .logo {
-    margin-left: 50px; /* Increase margin to the left */
+    margin-left: 10px; /* Small margin to the left */
 }
 
 header.issue-detail-header .nav-icons {
-    margin-right: 50px; /* Increase margin to the right edge */
+    margin-right: 10px; /* Small margin to the right edge */
 }
