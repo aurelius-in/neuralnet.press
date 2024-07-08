@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Issue Detail</title>
-    <link rel="stylesheet" href="../css/articles.css">
-    <script src="../scripts/loadTopbar.js" defer></script>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/articles.css">
 </head>
 <body>
-    <div id="topbar"></div>
-    <div class="content">
-        <h1>Issue: July 2024</h1>
-        <div class="issue-detail">
-            <h2>Innovative AI Startups Shaping the Future</h2>
-            <p>By Khalifa Al-Mohannadi • July 2024</p>
-            <img src="../images/issue-image.jpg" alt="AI Startups">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia diam nec lorem sodales, ac dapibus nisi facilisis. Fusce sit amet urna et nunc vehicula efficitur. Duis non bibendum lectus. Vivamus dictum, urna sed bibendum pharetra, lectus elit sodales libero, et facilisis libero erat at purus. Morbi pharetra lacus nec diam fermentum, sed auctor nisi sollicitudin. Maecenas in felis eget felis fringilla commodo. Proin suscipit placerat enim, a dapibus orci fringilla ut.</p>
-        </div>
-    </div>
+    <header id="topbar"></header>
+    <main>
+        <h1 id="issueTitle"></h1>
+        <h2 id="articleTitle"></h2>
+        <h3 id="authorDate"></h3>
+        <div id="articleImage"></div>
+        <div id="articleContent"></div>
+    </main>
     <footer>
         <p>© 2024 NeuralNet Press. All rights reserved.</p>
     </footer>
+    <script src="../scripts/loadTopbar.js"></script>
+    <script src="../scripts/issueDetail.js"></script>
 </body>
 </html>
