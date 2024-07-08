@@ -13,7 +13,13 @@ body {
     padding: 0 15px;
 }
 
-.top-bar {
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
     background-color: white;
     padding: 10px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -21,15 +27,13 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .logo {
     max-height: 50px; /* Adjust as needed */
-    height: auto;
+    width: 65%; /* Adjust percentage for better fit */
     margin: 0 10px; /* Adjust margin to reduce space between logo and dropdown menu */
+    object-fit: contain; /* Maintain aspect ratio */
 }
 
 .nav-icons {
@@ -56,10 +60,28 @@ body {
     display: none;
     flex-direction: column;
     gap: 10px;
+    background-color: white; /* Ensure background color for dropdown */
+    position: absolute;
+    left: 0;
+    top: 60px; /* Adjust based on header height */
+    width: 100%; /* Full width dropdown */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links.active {
     display: flex;
+}
+
+.nav-links a {
+    color: #003789; /* Blue text color */
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.nav-links a:hover {
+    background-color: #f1f1f1; /* Light gray on hover */
 }
 
 main {
