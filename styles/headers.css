@@ -17,7 +17,7 @@ header {
 .logo {
     max-height: 50px;
     object-fit: contain;
-    margin-left: 10px; /* Adjust margin to prevent overlap */
+    margin-left: 40px; /* Increase margin to the left */
 }
 
 .menu-toggle {
@@ -26,9 +26,83 @@ header {
     font-size: 24px;
     cursor: pointer;
     color: #003789; /* Match the main color theme */
-    margin-left: auto; /* Push the menu button to the right */
-    padding-left: 10px; /* Add padding to the left */
-    padding-right: 20px; /* Add padding to the right */
+    margin-right: 20px; /* Add margin to prevent overlap */
+    padding-right: 10px; /* Add padding to the right */
+}
+
+.nav-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-icons a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #003789; /* Match the main color theme */
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* More transparent background */
+    width: auto; /* Reduce the width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px 10px; /* Adjust padding */
+    border-radius: 5px; /* Add border radius for a cleaner look */
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links li {
+    list-style: none;
+    padding: 2px 0; /* Reduce padding between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #003789;
+    font-size: 14px; /* Smaller text size */
+    font-weight: bold; /* Bold text */
+}
+
+.nav-links a:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Slight hover effect */
+}
+/* headers.css */
+header {
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.logo {
+    max-height: 50px;
+    object-fit: contain;
+    margin-left: 40px; /* Increase margin to the left */
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #003789; /* Match the main color theme */
+    margin-right: 20px; /* Add margin to prevent overlap */
+    padding-right: 10px; /* Add padding to the right */
 }
 
 .nav-icons {
