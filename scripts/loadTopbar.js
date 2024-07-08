@@ -1,31 +1,25 @@
-function loadTopbar() {
-    var topbarHtml = `
-        <header>
-            <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
-            <img src="../images/nnlogo.png" alt="NeuralNet">
-            <nav>
-                <a href="../index.html">Home</a>
-                <a href="../issues.html">Issues</a>
-                <a href="../#about">About Us</a>
-                <a href="../#contact">Contact</a>
-            </nav>
-            <div>
-                <a href="#"><img src="../images/magnifying-glass.png" alt="Search"></a>
-                <a href="#"><img src="../images/profile.png" alt="Profile"></a>
-            </div>
-        </header>
+document.addEventListener('DOMContentLoaded', function() {
+    const topbar = document.getElementById('topbar');
+    topbar.innerHTML = `
+        <div class="topbar-container">
+            <button id="menuButton" class="menu-button"></button>
+            <img src="../images/nnlogo.png" alt="NeuralNet Logo" class="logo">
+            <img src="../images/magnifying-glass.png" alt="Search" class="search-icon">
+            <img src="../images/profile-icon.png" alt="Profile" class="profile-icon">
+        </div>
+        <nav id="menu" class="menu hidden">
+            <ul>
+                <li><a href="https://aurelius-in.github.io/neuralnet.press/">Home</a></li>
+                <li><a href="https://aurelius-in.github.io/neuralnet.press/issues.html">Issues</a></li>
+                <li><a href="https://aurelius-in.github.io/neuralnet.press/#about">About Us</a></li>
+                <li><a href="https://aurelius-in.github.io/neuralnet.press/#contact">Contact</a></li>
+            </ul>
+        </nav>
     `;
 
-    document.getElementById("topbar").innerHTML = topbarHtml;
-}
-
-function toggleMenu() {
-    var nav = document.querySelector('nav');
-    nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    loadTopbar();
-    var menuButton = document.querySelector('.menu-button');
-    menuButton.addEventListener('click', toggleMenu);
+    const menuButton = document.getElementById('menuButton');
+    const menu = document.getElementById('menu');
+    menuButton.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
 });
