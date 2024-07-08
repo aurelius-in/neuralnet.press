@@ -10,8 +10,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 30px; /* Increase padding on left edge */
-    padding-right: 30px; /* Increase padding on right edge */
+    padding-left: 20px; /* Adjust padding on left edge */
+    padding-right: 20px; /* Adjust padding on right edge */
 }
 
 .logo {
@@ -26,7 +26,8 @@ header {
     font-size: 24px;
     cursor: pointer;
     color: #003789; /* Match the main color theme */
-    padding-right: 10px; /* Add padding to the right */
+    margin-right: 10px; /* Adjust margin to prevent overlap */
+    padding-left: 10px; /* Add padding to the left */
 }
 
 .nav-icons {
