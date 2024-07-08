@@ -15,6 +15,7 @@ header {
 .logo {
     max-height: 50px;
     object-fit: contain;
+    margin-left: 10px; /* Add margin to prevent overlap */
 }
 
 .menu-toggle {
@@ -22,6 +23,8 @@ header {
     border: none;
     font-size: 24px;
     cursor: pointer;
+    color: #003789; /* Match the main color theme */
+    margin-right: 10px; /* Add margin to prevent overlap */
 }
 
 .nav-icons {
@@ -40,11 +43,12 @@ header {
     flex-direction: column;
     position: absolute;
     top: 60px; /* Adjust based on header height */
-    right: 0;
-    background-color: white;
-    width: 100%;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* More transparent background */
+    width: auto; /* Reduce the width */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
+    padding: 5px 10px; /* Adjust padding */
+    border-radius: 5px; /* Add border radius for a cleaner look */
 }
 
 .nav-links.active {
@@ -53,7 +57,7 @@ header {
 
 .nav-links li {
     list-style: none;
-    padding: 10px 15px;
+    padding: 5px 0; /* Reduce padding */
 }
 
 .nav-links a {
@@ -62,5 +66,5 @@ header {
 }
 
 .nav-links a:hover {
-    background-color: #f1f1f1;
+    background-color: rgba(0, 0, 0, 0.05); /* Slight hover effect */
 }
