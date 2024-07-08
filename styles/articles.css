@@ -110,13 +110,21 @@ main {
 
 /* Specific styles for issueDetail.html topbar */
 header.issue-detail-header {
-    padding-left: 10px; /* Small padding on left edge */
-    padding-right: 10px; /* Ensure there is space on the right edge */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 header.issue-detail-header .menu-toggle {
-    margin-right: 0; /* Move menu button closer to the left edge */
-    padding-left: 0; /* Remove additional padding */
+    margin-right: 10px; /* Adjust space to the right */
+    padding-left: 10px; /* Remove additional padding */
 }
 
 header.issue-detail-header .logo {
@@ -124,5 +132,9 @@ header.issue-detail-header .logo {
 }
 
 header.issue-detail-header .nav-icons {
-    margin-right: 10px; /* Small margin to the right edge */
+    margin-right: 20px; /* Increase margin to the right edge */
+}
+
+header.issue-detail-header .nav-icons a {
+    margin-left: 15px; /* Add space between icons */
 }
