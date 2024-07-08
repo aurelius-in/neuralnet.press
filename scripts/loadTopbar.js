@@ -1,7 +1,14 @@
 // loadTopbar.js
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('../topbar.html') // Adjust this path based on where loadTopbar.js is located
-        .then(response => response.text())
+    const pathToTopbar = location.pathname.includes('articles') ? '../topbar.html' : 'topbar.html';
+
+    fetch(pathToTopbar)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
         .then(data => {
             document.getElementById('topbar-placeholder').innerHTML = data;
 
