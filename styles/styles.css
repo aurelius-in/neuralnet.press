@@ -101,30 +101,23 @@ footer {
     margin-top: auto; /* Push the footer to the bottom */
 }
 
-.issue-date {
+.issue-date a {
     color: #fff; /* White color for issue date links */
     font-weight: bold; /* Make text bold */
     text-decoration: none; /* Remove underline */
-    font-size: 1.25rem; /* Adjust font size */
-    display: block;
-    margin-top: 10px; /* Add some spacing above */
 }
 
-.issue-thumb {
-    text-align: center;
-    margin-top: 20px;
+.bold-white {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-.issue-thumb img {
+/* Styles for the 'This Month' heading */
+.this-month-heading {
+    width: 100%;
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto 10px auto;
-}
-
-.this-month-header img {
-    display: block;
     margin: 20px auto; /* Center the image with some margin */
-    max-width: 100%; /* Make sure it fits within the container */
-    height: auto; /* Maintain aspect ratio */
 }
