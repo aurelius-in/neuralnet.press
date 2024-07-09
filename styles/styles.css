@@ -101,11 +101,13 @@ footer {
     margin-top: auto; /* Push the footer to the bottom */
 }
 
-.issue-date a {
+.issue-date {
     color: #fff; /* White color for issue date links */
     font-weight: bold; /* Make text bold */
     text-decoration: none; /* Remove underline */
     font-size: 1.25rem; /* Adjust font size */
+    display: block;
+    margin-top: 10px; /* Add some spacing above */
 }
 
 .issue-thumb {
