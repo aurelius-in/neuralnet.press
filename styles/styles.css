@@ -15,6 +15,7 @@ body {
     margin: 0 auto;
     padding: 0 15px;
     flex: 1; /* Ensures the container takes up remaining space */
+    text-align: center; /* Center all content inside the container */
 }
 
 header .container {
