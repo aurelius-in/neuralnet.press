@@ -3,20 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Issues - NeuralNet Press</title>
+    <title>NeuralNet Press - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/headers.css">
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/issues.css">
 </head>
 <body>
     <div id="topbar-placeholder"></div>
     <main>
         <div class="container">
-            <h2>Past Issues</h2>
-            <div id="issues" class="issues">
-                <!-- Issues will be loaded here dynamically -->
+            <!-- Adding 'This Month' Heading -->
+            <img src="images/thismonth.png" alt="This Month" class="this-month-heading">
+
+            <!-- Issue Cover -->
+            <div class="issue-cover">
+                <img src="images/neuralnet_cover.jpg" alt="NeuralNet Cover" class="header-image">
+                <div class="issue-date">
+                    <a href="https://aurelius-in.github.io/neuralnet.press/issues.html#july-2024" class="bold-white">July 2024</a>
+                </div>
             </div>
+
+            <!-- About Us Section -->
+            <section id="about">
+                <h2>About Us</h2>
+                <p>NeuralNet Press is dedicated to providing the latest insights and research in the field of artificial intelligence. Our mission is to keep the AI community informed and engaged with high-quality content and expert analysis.</p>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>If you have any questions or would like to get in touch, please email us at <a href="mailto:contact@neuralnet.press">contact@neuralnet.press</a> or fill out the contact form on our website.</p>
+            </section>
         </div>
     </main>
     <footer>
@@ -24,8 +41,6 @@
             <p>&copy; 2024 NeuralNet Press. All rights reserved.</p>
         </div>
     </footer>
-    <script src="scripts/issues.js"></script>
-    <script src="scripts/main.js"></script>
     <script src="scripts/loadTopbar.js"></script>
 </body>
 </html>
