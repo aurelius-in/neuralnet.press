@@ -112,3 +112,11 @@ main {
 .read-more:hover {
     background-color: #cc7a00;
 }
+
+/* Adjustments specific to issueDetail.html */
+@media (min-width: 600px) {
+    .logo {
+        height: 45px; /* 5% smaller */
+        margin-left: 10px; /* Increased minimum distance from the left edge */
+    }
+}
