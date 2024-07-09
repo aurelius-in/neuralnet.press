@@ -122,3 +122,12 @@ footer {
     display: block;
     margin: 20px auto; /* Center the image with some margin */
 }
+
+/* Updated header-image class to make it fit the screen */
+.header-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover; /* Ensures the image covers the container */
+}
