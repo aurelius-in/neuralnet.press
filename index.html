@@ -7,29 +7,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/headers.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/issues.css">
+    <link rel="stylesheet" href="styles/articles.css">
 </head>
 <body>
     <div id="topbar-placeholder"></div>
     <main>
         <div class="container">
-            <div id="issues" class="issues">
-                <!-- Most recent issue will be loaded here dynamically -->
+            <h1>This Month</h1>
+            <div class="issue-thumb">
+                <img src="images/issue-cover.jpg" alt="Issue Cover">
+                <a href="articles/issueDetail.html?issue=2407" class="issue-date">July 2024</a>
             </div>
-            <!-- About Us Section -->
-            <section id="about">
-                <div class="container">
-                    <h2>About Us</h2>
-                    <p>NeuralNet Press is dedicated to providing the latest insights and research in the field of artificial intelligence. Our mission is to keep the AI community informed and engaged with high-quality content and expert analysis.</p>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact">
-                <div class="container">
-                    <h2>Contact</h2>
-                    <p>If you have any questions or would like to get in touch, please email us at contact@neuralnet.press or fill out the contact form on our website.</p>
-                </div>
-            </section>
+            <!-- Other content -->
         </div>
     </main>
     <footer>
@@ -38,6 +28,5 @@
         </div>
     </footer>
     <script src="scripts/loadTopbar.js"></script>
-    <script src="scripts/index.js"></script>
 </body>
 </html>
