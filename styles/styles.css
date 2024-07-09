@@ -119,3 +119,10 @@ footer {
     display: block;
     margin: 0 auto 10px auto;
 }
+
+.this-month-header img {
+    display: block;
+    margin: 20px auto; /* Center the image with some margin */
+    max-width: 100%; /* Make sure it fits within the container */
+    height: auto; /* Maintain aspect ratio */
+}
