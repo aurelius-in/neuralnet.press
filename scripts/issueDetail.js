@@ -74,7 +74,8 @@ function createArticleElement(article, category, container, issueNumber) {
     articleElement.appendChild(image);
 
     const content = document.createElement('div');
-    const trimmedContent = trimContent(article.content, 200);
+    const cleanedContent = removeCitations(article.content);
+    const trimmedContent = trimContent(cleanedContent, 200);
     content.innerHTML = trimmedContent.trimmedText;
     content.classList.add('article-content');
     articleElement.appendChild(content);
@@ -96,6 +97,10 @@ function createArticleElement(article, category, container, issueNumber) {
     }
 
     container.appendChild(articleElement);
+}
+
+function removeCitations(content) {
+    return content.replace(/:citation\[oaicite:\d+\]{index=\d+}/g, '');
 }
 
 function trimContent(content, wordLimit) {
