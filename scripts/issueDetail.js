@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    document.getElementById('issue-title').textContent = `${formatDate(issueNumber)} Edition`;
+    document.getElementById('issue-title').textContent = `July 2024 Edition`;
 
     const categories = [
         'startups', 'research', 'industry', 'robotics', 'policy', 
@@ -99,10 +99,6 @@ function createArticleElement(article, category, container, issueNumber) {
     container.appendChild(articleElement);
 }
 
-function removeCitations(content) {
-    return content.replace(/:citation\[oaicite:\d+\]{index=\d+}/g, '');
-}
-
 function trimContent(content, wordLimit) {
     const words = content.split(/\s+/);
     if (words.length > wordLimit) {
@@ -118,4 +114,8 @@ function formatDate(issueNumber) {
     const month = issueNumber.slice(2);
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     return `${monthNames[parseInt(month) - 1]} ${year}`;
+}
+
+function removeCitations(content) {
+    return content.replace(/:citation\[oaicite:\d+\]{index=\d+}\u200B/g, '');
 }
