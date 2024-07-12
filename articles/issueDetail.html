@@ -3,39 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuralNet Press - Home</title>
+    <title>Issue Details - NeuralNet Press</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/headers.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="../styles/headers.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/issues.css">
+    <link rel="stylesheet" href="../styles/articles.css">
+    <style>
+        /* Specific adjustments for issueDetail.html */
+        .logo.issue-detail {
+            max-height: 45px; /* Make the logo slightly smaller */
+            margin-left: 35px; /* Increase the margin from the left edge */
+        }
+        /* Gradient animation for the header */
+        @keyframes gradient {
+            0% { color: #ff9900; }
+            25% { color: #ffcc66; }
+            50% { color: #fff; }
+            75% { color: #ffcc66; }
+            100% { color: #ff9900; }
+        }
+        #issue-title {
+            font-size: 2rem; /* Reduced font size */
+            font-weight: 600; /* Reduced font weight */
+            text-align: center;
+            text-transform: uppercase;
+            animation: gradient 5s infinite;
+        }
+    </style>
 </head>
 <body>
     <div id="topbar-placeholder"></div>
     <main>
         <div class="container">
-            <!-- Adding 'This Month' Heading -->
-            <img src="images/thismonth.png" alt="This Month" class="this-month-heading">
-
-            <!-- Issue Cover -->
-            <div class="issue-cover">
-                <a id="issue-link" href="">
-                    <img id="issue-cover" src="" alt="NeuralNet Cover" class="header-image">
-                </a>
-                <div class="issue-date">
-                    <a id="issue-date" href="" class="bold-white"></a>
-                </div>
+            <h1 id="issue-title">July 2024 Edition</h1>
+            <div id="articles" class="articles">
+                <!-- Articles will be loaded here dynamically -->
             </div>
-
-            <!-- About Us Section -->
-            <section id="about">
-                <h2>About Us</h2>
-                <p>NeuralNet Press is dedicated to providing the latest insights and research in the field of artificial intelligence. Our mission is to keep the AI community informed and engaged with high-quality content and expert analysis.</p>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact">
-                <h2>Contact</h2>
-                <p>If you have any questions or would like to get in touch, please email us at <a href="mailto:contact@neuralnet.press">contact@neuralnet.press</a> or fill out the contact form on our website.</p>
-            </section>
         </div>
     </main>
     <footer>
@@ -43,7 +47,7 @@
             <p>&copy; 2024 NeuralNet Press. All rights reserved.</p>
         </div>
     </footer>
-    <script src="scripts/loadTopbar.js"></script>
-    <script src="scripts/loadCurrentIssue.js"></script>
+    <script src="../scripts/issueDetail.js"></script>
+    <script src="../scripts/loadTopbar.js"></script>
 </body>
 </html>
