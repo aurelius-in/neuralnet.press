@@ -9,11 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('issue-title').textContent = `July 2024 Edition`;
 
-    const categories = [
+    let categories = [
         'startups', 'research', 'industry', 'robotics', 'policy', 
         'entertainment', 'cybersecurity', 'events', 'environment', 
         'society', 'collaborations', 'education', 'ethics', 'healthcare'
     ];
+
+    categories = shuffleArray(categories);
     const articlesContainer = document.getElementById('articles');
 
     categories.forEach(category => {
@@ -32,6 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.classList.toggle('active');
     });
 });
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
 function createArticleElement(article, category, container, issueNumber) {
     const articleElement = document.createElement('div');
@@ -75,7 +85,7 @@ function createArticleElement(article, category, container, issueNumber) {
 
     const content = document.createElement('div');
     const cleanedContent = removeCitations(article.content);
-    const trimmedContent = trimContent(cleanedContent, 200);
+    const trimmedContent = trimContent(cleanedContent, 150);
     content.innerHTML = trimmedContent.trimmedText;
     content.classList.add('article-content');
     articleElement.appendChild(content);
@@ -86,7 +96,7 @@ function createArticleElement(article, category, container, issueNumber) {
         readMoreButton.textContent = 'Read More';
         readMoreButton.classList.add('read-more');
         readMoreButton.addEventListener('click', function() {
-            const additionalContent = trimContent(remainingText, 200);
+            const additionalContent = trimContent(remainingText, 150);
             content.innerHTML += additionalContent.trimmedText;
             remainingText = additionalContent.remainingText;
             if (!remainingText) {
@@ -107,7 +117,7 @@ function trimContent(content, wordLimit) {
 
         const firstCommaIndex = restWords.indexOf(',');
         if (firstCommaIndex !== -1) {
-            const commaCutContent = restWords.slice(0, firstCommaIndex + 1);
+            const commaCutContent = restWords.slice(0, firstCommaIndex + 1); // Includes the comma
             const remainingContent = restWords.slice(firstCommaIndex + 1);
             return { trimmedText: trimmedWords + ' ' + commaCutContent, remainingText: remainingContent };
         }
@@ -116,7 +126,6 @@ function trimContent(content, wordLimit) {
     }
     return { trimmedText: content, remainingText: '' };
 }
-
 
 function formatDate(issueNumber) {
     const year = `20${issueNumber.slice(0, 2)}`;
