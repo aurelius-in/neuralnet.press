@@ -102,12 +102,21 @@ function createArticleElement(article, category, container, issueNumber) {
 function trimContent(content, wordLimit) {
     const words = content.split(/\s+/);
     if (words.length > wordLimit) {
-        const trimmedText = words.slice(0, wordLimit).join(' ');
-        const remainingText = words.slice(wordLimit).join(' ');
-        return { trimmedText, remainingText };
+        const trimmedWords = words.slice(0, wordLimit).join(' ');
+        const restWords = words.slice(wordLimit).join(' ');
+
+        const firstCommaIndex = restWords.indexOf(',');
+        if (firstCommaIndex !== -1) {
+            const commaCutContent = restWords.slice(0, firstCommaIndex + 1);
+            const remainingContent = restWords.slice(firstCommaIndex + 1);
+            return { trimmedText: trimmedWords + ' ' + commaCutContent, remainingText: remainingContent };
+        }
+
+        return { trimmedText: trimmedWords, remainingText: restWords };
     }
     return { trimmedText: content, remainingText: '' };
 }
+
 
 function formatDate(issueNumber) {
     const year = `20${issueNumber.slice(0, 2)}`;
