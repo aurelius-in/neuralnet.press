@@ -117,5 +117,5 @@ function formatDate(issueNumber) {
 }
 
 function removeCitations(content) {
-    return content.replace(/:citation\[oaicite:\d+\]{index=\d+}\u200B/g, '');
+    return content.replace(/:citation\[oaicite:\d+\]{index=\d+}/g, '');
 }
