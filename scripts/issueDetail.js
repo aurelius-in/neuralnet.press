@@ -144,10 +144,10 @@ function cleanUpContent(content) {
     // Replace specific patterns with no <br> tag
     content = content.replace(/<\/h2>\s*<br\s*\/?>\s*<p>/g, '</h2><p>');
     // Replace multiple consecutive <br> tags with a single <br>
-    content = content.replace(/(<br\s*\/?>\s*){2,}/g, '<br>');
+    content = content.replace(/(<br\s*\/?>\s*){2,}/g, '');
     // Replace multiple consecutive paragraph or heading tags with single ones
     content = content.replace(/(<\/p>\s*<p>|<\/h\d>\s*<h\d>){2,}/g, '</p><p>');
     // Remove any other excessive spaces or tags
-    content = content.replace(/\s*<br\s*\/?>\s*/g, '<br>');
+    content = content.replace(/\s*<br\s*\/?>\s*/g, '');
     return content;
 }
