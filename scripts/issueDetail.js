@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    document.getElementById('issue-title').textContent = `July 2024 Edition`;
+    document.getElementById('issue-title').textContent = `${formatDate(issueNumber)} Edition`;
 
     let categories = [
         'startups', 'research', 'industry', 'robotics', 'policy', 
@@ -144,10 +144,10 @@ function cleanUpContent(content) {
     // Replace specific patterns with no <br> tag
     content = content.replace(/<\/h2>\s*<br\s*\/?>\s*<p>/g, '</h2><p>');
     // Replace multiple consecutive <br> tags with a single <br>
-    content = content.replace(/(<br\s*\/?>\s*){2,}/g, '');
+    content = content.replace(/(<br\s*\/?>\s*){2,}/g, '<br>');
     // Replace multiple consecutive paragraph or heading tags with single ones
     content = content.replace(/(<\/p>\s*<p>|<\/h\d>\s*<h\d>){2,}/g, '</p><p>');
     // Remove any other excessive spaces or tags
-    content = content.replace(/\s*<br\s*\/?>\s*/g, '');
+    content = content.replace(/\s*<br\s*\/?>\s*/g, '<br>');
     return content;
 }
