@@ -146,6 +146,6 @@ function cleanUpContent(content) {
     // Replace multiple consecutive paragraph or heading tags with single ones
     content = content.replace(/(<\/p>\s*<p>|<\/h\d>\s*<h\d>){2,}/g, '</p><p>');
     // Remove any other excessive spaces or tags
-    content = content.replace(/\s*<br\s*\/?>\s*<br\s*\/?>\s*/g, '<br>');
+    content = content.replace(/\s*<br\s*\/?>\s*/g, '<br>');
     return content;
 }
