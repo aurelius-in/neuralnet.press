@@ -84,7 +84,7 @@ function createArticleElement(article, category, container, issueNumber) {
     articleElement.appendChild(image);
 
     const content = document.createElement('div');
-    const cleanedContent = removeCitations(article.content);
+    const cleanedContent = cleanUpContent(removeCitations(article.content));
     const trimmedContent = trimContent(cleanedContent, 150);
     content.innerHTML = trimmedContent.trimmedText;
     content.classList.add('article-content');
@@ -136,4 +136,12 @@ function formatDate(issueNumber) {
 
 function removeCitations(content) {
     return content.replace(/:citation\[oaicite:\d+\]{index=\d+}/g, '');
+}
+
+function cleanUpContent(content) {
+    // Replace multiple consecutive <br> tags with a single <br>
+    content = content.replace(/(<br\s*\/?>\s*){2,}/g, '<br><br>');
+    // Replace multiple consecutive paragraph or heading tags with single ones
+    content = content.replace(/(<\/p>\s*<p>|<\/h\d>\s*<h\d>){2,}/g, '</p><p>');
+    return content;
 }
