@@ -140,10 +140,12 @@ function removeCitations(content) {
 
 function cleanUpContent(content) {
     // Replace specific patterns with a single <br> tag
-    content = content.replace(/<\/p><br\s*\/?><br\s*\/?><h2>/g, '</p><br><h2>');
+    content = content.replace(/<\/p>\s*<br\s*\/?>\s*<br\s*\/?>\s*<h2>/g, '</p><br><h2>');
     // Replace multiple consecutive <br> tags with a single <br>
     content = content.replace(/(<br\s*\/?>\s*){2,}/g, '<br><br>');
     // Replace multiple consecutive paragraph or heading tags with single ones
     content = content.replace(/(<\/p>\s*<p>|<\/h\d>\s*<h\d>){2,}/g, '</p><p>');
+    // Remove any other excessive spaces or tags
+    content = content.replace(/\s*<br\s*\/?>\s*<br\s*\/?>\s*/g, '<br>');
     return content;
 }
