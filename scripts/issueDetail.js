@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    document.getElementById('issue-title').textContent = `${formatDate(issueNumber)} Edition`;
+    const issueTitle = document.getElementById('issue-title');
+    issueTitle.textContent = `${formatDate(issueNumber)} Edition`;
 
     let categories = [
         'startups', 'research', 'industry', 'robotics', 'policy', 
