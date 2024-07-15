@@ -13,14 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
         'society', 'collaborations', 'education', 'ethics', 'healthcare'
     ];
 
-    const issueNumbers = ['2407', '2406', '2405']; // List all your issue numbers here
+    const issueNumbers = ['2407', '2406', '2405', '2404', '2403', '2402', '2401', '2312']; // List all your issue numbers here
 
     let results = [];
     let promises = [];
 
     categories.forEach(category => {
         issueNumbers.forEach(issueNumber => {
-            const fetchPromise = fetch(`../data/${issueNumber}${category}.json`)
+            const fetchPromise = fetch(`https://aurelius-in.github.io/neuralnet.press/data/${issueNumber}${category}.json`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`Error loading ${category} articles for issue ${issueNumber}`);
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     return response.json();
                 })
                 .then(article => {
-                    console.log(`Fetched article: ${article.title}`); // Log fetched article title
+                    console.log(`Fetched article from ${issueNumber}${category}.json: ${article.title}`); // Log fetched article title
                     console.log(`Article content: ${article.content}`); // Log fetched article content
                     if (article.content.toLowerCase().includes(query.toLowerCase()) || article.title.toLowerCase().includes(query.toLowerCase())) {
                         console.log(`Article matches query: ${query}`); // Log matching article
