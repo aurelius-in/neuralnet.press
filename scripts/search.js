@@ -14,11 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     let results = [];
-    let promises = categories.map(category => {
-        return fetch(`../data/*${category}.json`)
-            .then(response => response.json())
-            .then(articles => {
-                articles.forEach(article => {
+    let promises = [];
+
+    categories.forEach(category => {
+        const issueNumbers = ['2407', '2406', '2405']; // List all your issue numbers here
+        issueNumbers.forEach(issueNumber => {
+            const fetchPromise = fetch(`../data/${issueNumber}${category}.json`)
+                .then(response => response.json())
+                .then(article => {
                     if (article.content.includes(query) || article.title.includes(query)) {
                         results.push({
                             title: article.title,
@@ -26,9 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             category: category
                         });
                     }
-                });
-            })
-            .catch(error => console.error(`Error loading ${category} articles:`, error));
+                })
+                .catch(error => console.error(`Error loading ${category} articles for issue ${issueNumber}:`, error));
+            promises.push(fetchPromise);
+        });
     });
 
     Promise.all(promises).then(() => displayResults(results, query));
