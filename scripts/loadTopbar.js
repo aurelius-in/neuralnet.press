@@ -16,8 +16,23 @@ document.addEventListener('DOMContentLoaded', function() {
             // Event listeners for topbar
             const menuToggle = document.getElementById('menu-toggle');
             const navLinks = document.getElementById('nav-links');
+            const searchIcon = document.getElementById('search-icon');
+            const searchDropdown = document.getElementById('search-dropdown');
+            const searchButton = document.getElementById('search-button');
+            const searchInput = document.getElementById('search-input');
+
             menuToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
+            });
+
+            searchIcon.addEventListener('click', () => {
+                searchDropdown.classList.toggle('active');
+            });
+
+            searchButton.addEventListener('click', () => {
+                if (searchInput.value.trim()) {
+                    window.location.href = `search.html?query=${encodeURIComponent(searchInput.value.trim())}`;
+                }
             });
         })
         .catch(error => console.error('Error loading topbar:', error));
