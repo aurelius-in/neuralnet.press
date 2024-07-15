@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'society', 'collaborations', 'education', 'ethics', 'healthcare'
     ];
 
-    const issueNumbers = ['2407', '2406', '2405']; // List all your issue numbers here
+    const issueNumbers = ['2407', '2406', '2405']; // Add more issue numbers as needed
 
     let results = [];
     let promises = [];
