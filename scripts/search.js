@@ -28,7 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     return response.json();
                 })
                 .then(article => {
+                    console.log(`Fetched article: ${article.title}`); // Log fetched article title
                     if (article.content.toLowerCase().includes(query.toLowerCase()) || article.title.toLowerCase().includes(query.toLowerCase())) {
+                        console.log(`Article matches query: ${query}`); // Log matching article
                         results.push({
                             title: article.title,
                             content: article.content,
