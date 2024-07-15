@@ -7,13 +7,31 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    fetch('data/articles.json') // Assume all articles are indexed in this file
-        .then(response => response.json())
-        .then(articles => {
-            const results = articles.filter(article => article.content.includes(query));
-            displayResults(results, query);
-        })
-        .catch(error => console.error('Error loading articles:', error));
+    const categories = [
+        'startups', 'research', 'industry', 'robotics', 'policy',
+        'entertainment', 'cybersecurity', 'events', 'environment',
+        'society', 'collaborations', 'education', 'ethics', 'healthcare'
+    ];
+
+    let results = [];
+    let promises = categories.map(category => {
+        return fetch(`../data/*${category}.json`)
+            .then(response => response.json())
+            .then(articles => {
+                articles.forEach(article => {
+                    if (article.content.includes(query) || article.title.includes(query)) {
+                        results.push({
+                            title: article.title,
+                            content: article.content,
+                            category: category
+                        });
+                    }
+                });
+            })
+            .catch(error => console.error(`Error loading ${category} articles:`, error));
+    });
+
+    Promise.all(promises).then(() => displayResults(results, query));
 });
 
 function displayResults(results, query) {
@@ -39,7 +57,7 @@ function displayResults(results, query) {
 
 function getSnippet(content, query) {
     const words = content.split(/\s+/);
-    const index = words.findIndex(word => word.includes(query));
+    const index = words.findIndex(word => word.toLowerCase().includes(query.toLowerCase()));
     const start = Math.max(index - 3, 0);
     const end = Math.min(index + 4, words.length);
     return words.slice(start, end).join(' ');
