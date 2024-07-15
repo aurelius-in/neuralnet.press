@@ -2,8 +2,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const query = urlParams.get('query');
-    console.log('Query:', query); // Log the search query
-
     if (!query) {
         document.getElementById('search-results').innerHTML = '<p>Please enter a search query.</p>';
         return;
@@ -15,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'society', 'collaborations', 'education', 'ethics', 'healthcare'
     ];
 
-    const issueNumbers = ['2407', '2406', '2405']; // Add more issue numbers as needed
+    const issueNumbers = ['2407', '2406', '2405', '2404', '2403', '2402', '2401', '2312']; // List all your issue numbers here
 
     let results = [];
     let promises = [];
@@ -30,14 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     return response.json();
                 })
                 .then(article => {
-                    console.log('Fetched article:', article); // Log fetched article data
+                    console.log(`Fetched article from ${issueNumber}${category}.json: ${article.title}`); // Log fetched article title
+                    console.log(`Article content: ${article.content}`); // Log fetched article content
                     if (article.content.toLowerCase().includes(query.toLowerCase()) || article.title.toLowerCase().includes(query.toLowerCase())) {
+                        console.log(`Article matches query: ${query}`); // Log matching article
                         results.push({
                             title: article.title,
                             content: article.content,
                             category: category,
-                            issueNumber: issueNumber,
-                            author: article.author || "Unknown Author"
+                            issueNumber: issueNumber
                         });
                     }
                 })
@@ -47,10 +46,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     Promise.all(promises).then(() => {
-        console.log('Results:', results); // Log search results
         displayResults(results, query);
         if (results.length === 0) {
-            document.getElementById('search-results').innerHTML = '<p>No results found. Please try another search term or check back later.</p>';
+            console.log('No results found. Results array:', results); // Log if no results found
         }
     });
 });
@@ -59,18 +57,19 @@ function displayResults(results, query) {
     const container = document.getElementById('search-results');
     container.innerHTML = '';
 
+    if (results.length === 0) {
+        container.innerHTML = '<p>No results found. Please try another search term or check back later.</p>';
+        return;
+    }
+
     results.forEach(article => {
         const snippet = getSnippet(article.content, query);
         const issueDate = formatDate(article.issueNumber);
-
         const articleElement = `
             <div class="search-result">
-                <a href="https://aurelius-in.github.io/neuralnet.press/articles/issueDetail.html?issue=${article.issueNumber}" class="search-link">
-                    <h2 class="search-title">${article.title}</h2>
-                    <p class="search-snippet">...${snippet}...</p>
-                    <p class="search-author">${article.author}</p>
-                    <p class="search-issue">Issue: ${issueDate}</p>
-                </a>
+                <h2 class="search-title">${article.title}</h2>
+                <p class="search-snippet">"...${snippet}..."</p>
+                <p class="search-issue">Issue: ${issueDate}</p>
             </div>
         `;
         container.innerHTML += articleElement;
