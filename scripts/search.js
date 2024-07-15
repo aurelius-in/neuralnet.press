@@ -2,6 +2,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const query = urlParams.get('query');
+    console.log('Query:', query); // Log the search query
+
     if (!query) {
         document.getElementById('search-results').innerHTML = '<p>Please enter a search query.</p>';
         return;
@@ -28,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     return response.json();
                 })
                 .then(article => {
+                    console.log('Fetched article:', article); // Log fetched article data
                     if (article.content.toLowerCase().includes(query.toLowerCase()) || article.title.toLowerCase().includes(query.toLowerCase())) {
                         results.push({
                             title: article.title,
@@ -44,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     Promise.all(promises).then(() => {
+        console.log('Results:', results); // Log search results
         displayResults(results, query);
         if (results.length === 0) {
             document.getElementById('search-results').innerHTML = '<p>No results found. Please try another search term or check back later.</p>';
