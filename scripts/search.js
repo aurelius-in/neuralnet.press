@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .then(article => {
                     console.log(`Fetched article: ${article.title}`); // Log fetched article title
+                    console.log(`Article content: ${article.content}`); // Log fetched article content
                     if (article.content.toLowerCase().includes(query.toLowerCase()) || article.title.toLowerCase().includes(query.toLowerCase())) {
                         console.log(`Article matches query: ${query}`); // Log matching article
                         results.push({
@@ -44,7 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    Promise.all(promises).then(() => displayResults(results, query));
+    Promise.all(promises).then(() => {
+        displayResults(results, query);
+        if (results.length === 0) {
+            console.log('No results found. Results array:', results); // Log if no results found
+        }
+    });
 });
 
 function displayResults(results, query) {
