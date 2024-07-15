@@ -1,0 +1,40 @@
+/* search.css */
+.search-result {
+    margin-bottom: 20px;
+}
+
+.search-link {
+    text-decoration: underline;
+    color: white;
+}
+
+.search-link:hover {
+    color: #ffcc66; /* Light orange */
+}
+
+.search-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.search-snippet {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0;
+}
+
+.search-author {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #ffcc66; /* Light orange */
+    margin: 0;
+}
+
+.search-issue {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+}
