@@ -64,12 +64,10 @@ function displayResults(results, query) {
 
     results.forEach(article => {
         const snippet = getSnippet(article.content, query);
-        const issueDate = formatDate(article.issueNumber);
         const articleElement = `
             <div class="search-result">
                 <h2 class="search-title">${article.title}</h2>
-                <p class="search-snippet">"...${snippet}..."</p>
-                <p class="search-issue">Issue: ${issueDate}</p>
+                <p class="search-snippet">...${snippet}...</p>
             </div>
         `;
         container.innerHTML += articleElement;
@@ -82,11 +80,4 @@ function getSnippet(content, query) {
     const start = Math.max(index - 3, 0);
     const end = Math.min(index + 4, words.length);
     return words.slice(start, end).join(' ');
-}
-
-function formatDate(issueNumber) {
-    const year = `20${issueNumber.slice(0, 2)}`;
-    const month = issueNumber.slice(2);
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    return `${monthNames[parseInt(month) - 1]} ${year}`;
 }
