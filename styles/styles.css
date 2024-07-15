@@ -170,20 +170,24 @@ footer {
     cursor: not-allowed;
 }
 
-/* Styles for search results */
 .search-result {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 20px;
 }
 
 .search-title {
-    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    color: #003789;
-    margin-bottom: 5px;
+    font-size: 1rem;
 }
 
 .search-snippet {
-    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
     font-style: italic;
-    color: #666;
+    margin: 5px 0;
+}
+
+.search-issue {
+    font-size: 1rem;
+    margin-top: 5px;
 }
