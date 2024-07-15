@@ -13,24 +13,31 @@ document.addEventListener('DOMContentLoaded', function() {
         'society', 'collaborations', 'education', 'ethics', 'healthcare'
     ];
 
+    const issueNumbers = ['2407', '2406', '2405']; // List all your issue numbers here
+
     let results = [];
     let promises = [];
 
     categories.forEach(category => {
-        const issueNumbers = ['2407', '2406', '2405']; // List all your issue numbers here
         issueNumbers.forEach(issueNumber => {
             const fetchPromise = fetch(`../data/${issueNumber}${category}.json`)
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Error loading ${category} articles for issue ${issueNumber}`);
+                    }
+                    return response.json();
+                })
                 .then(article => {
-                    if (article.content.includes(query) || article.title.includes(query)) {
+                    if (article.content.toLowerCase().includes(query.toLowerCase()) || article.title.toLowerCase().includes(query.toLowerCase())) {
                         results.push({
                             title: article.title,
                             content: article.content,
-                            category: category
+                            category: category,
+                            issueNumber: issueNumber
                         });
                     }
                 })
-                .catch(error => console.error(`Error loading ${category} articles for issue ${issueNumber}:`, error));
+                .catch(error => console.error(error));
             promises.push(fetchPromise);
         });
     });
@@ -43,7 +50,7 @@ function displayResults(results, query) {
     container.innerHTML = '';
 
     if (results.length === 0) {
-        container.innerHTML = '<p>No results found.</p>';
+        container.innerHTML = '<p>No results found. Please try another search term or check back later.</p>';
         return;
     }
 
