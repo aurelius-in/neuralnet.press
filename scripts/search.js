@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'society', 'collaborations', 'education', 'ethics', 'healthcare'
     ];
 
-    const issueNumbers = ['2407', '2406', '2405', '2404', '2403', '2402', '2401', '2312']; // List all your issue numbers here
+    const issueNumbers = ['2407', '2406', '2405']; // List all your issue numbers here
 
     let results = [];
     let promises = [];
@@ -28,15 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     return response.json();
                 })
                 .then(article => {
-                    console.log(`Fetched article from ${issueNumber}${category}.json: ${article.title}`); // Log fetched article title
-                    console.log(`Article content: ${article.content}`); // Log fetched article content
                     if (article.content.toLowerCase().includes(query.toLowerCase()) || article.title.toLowerCase().includes(query.toLowerCase())) {
-                        console.log(`Article matches query: ${query}`); // Log matching article
                         results.push({
                             title: article.title,
                             content: article.content,
                             category: category,
-                            issueNumber: issueNumber
+                            issueNumber: issueNumber,
+                            author: article.author || "Unknown Author"
                         });
                     }
                 })
@@ -48,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     Promise.all(promises).then(() => {
         displayResults(results, query);
         if (results.length === 0) {
-            console.log('No results found. Results array:', results); // Log if no results found
+            document.getElementById('search-results').innerHTML = '<p>No results found. Please try another search term or check back later.</p>';
         }
     });
 });
@@ -57,17 +55,18 @@ function displayResults(results, query) {
     const container = document.getElementById('search-results');
     container.innerHTML = '';
 
-    if (results.length === 0) {
-        container.innerHTML = '<p>No results found. Please try another search term or check back later.</p>';
-        return;
-    }
-
     results.forEach(article => {
         const snippet = getSnippet(article.content, query);
+        const issueDate = formatDate(article.issueNumber);
+
         const articleElement = `
             <div class="search-result">
-                <h2 class="search-title">${article.title}</h2>
-                <p class="search-snippet">...${snippet}...</p>
+                <a href="https://aurelius-in.github.io/neuralnet.press/articles/issueDetail.html?issue=${article.issueNumber}" class="search-link">
+                    <h2 class="search-title">${article.title}</h2>
+                    <p class="search-snippet">...${snippet}...</p>
+                    <p class="search-author">${article.author}</p>
+                    <p class="search-issue">Issue: ${issueDate}</p>
+                </a>
             </div>
         `;
         container.innerHTML += articleElement;
@@ -80,4 +79,11 @@ function getSnippet(content, query) {
     const start = Math.max(index - 3, 0);
     const end = Math.min(index + 4, words.length);
     return words.slice(start, end).join(' ');
+}
+
+function formatDate(issueNumber) {
+    const year = `20${issueNumber.slice(0, 2)}`;
+    const month = issueNumber.slice(2);
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    return `${monthNames[parseInt(month) - 1]} ${year}`;
 }
