@@ -131,3 +131,59 @@ footer {
     margin: 0 auto;
     object-fit: cover; /* Ensures the image covers the container */
 }
+
+/* Add to your existing CSS files */
+
+/* Styles for the search dropdown */
+.search-dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-dropdown.active {
+    display: block;
+}
+
+#search-input {
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.search-button {
+    background-color: #003789;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Styles for search results */
+.search-result {
+    margin-bottom: 20px;
+}
+
+.search-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #003789;
+    margin-bottom: 5px;
+}
+
+.search-snippet {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    color: #666;
+}
