@@ -2,92 +2,67 @@
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const query = urlParams.get('query');
+    const searchResultsContainer = document.getElementById('search-results');
+
     if (!query) {
-        document.getElementById('search-results').innerHTML = '<p>Please enter a search query.</p>';
+        searchResultsContainer.innerHTML = '<p>No search query provided.</p>';
         return;
     }
 
+    const issueNumbers = ["2312", "2407", "2406", "2405"]; // Add all issue numbers as needed
     const categories = [
-        'startups', 'research', 'industry', 'robotics', 'policy',
-        'entertainment', 'cybersecurity', 'events', 'environment',
+        'startups', 'research', 'industry', 'robotics', 'policy', 
+        'entertainment', 'cybersecurity', 'events', 'environment', 
         'society', 'collaborations', 'education', 'ethics', 'healthcare'
     ];
 
-    const issueNumbers = ['2407', '2406', '2405', '2404', '2403', '2402', '2401', '2312']; // List all your issue numbers here
+    const searchPromises = issueNumbers.flatMap(issueNumber => 
+        categories.map(category => 
+            fetch(`../data/${issueNumber}${category}.json`)
+                .then(response => response.json())
+                .then(article => ({ article, issueNumber, category }))
+                .catch(error => console.error(`Error loading ${category} article for issue ${issueNumber}:`, error))
+        )
+    );
 
-    let results = [];
-    let promises = [];
+    Promise.all(searchPromises).then(results => {
+        const filteredResults = results.filter(({ article }) => 
+            article && article.content && article.content.toLowerCase().includes(query.toLowerCase())
+        );
 
-    categories.forEach(category => {
-        issueNumbers.forEach(issueNumber => {
-            const fetchPromise = fetch(`https://aurelius-in.github.io/neuralnet.press/data/${issueNumber}${category}.json`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Error loading ${category} articles for issue ${issueNumber}`);
-                    }
-                    return response.json();
-                })
-                .then(article => {
-                    if (article.content.toLowerCase().includes(query.toLowerCase()) || article.title.toLowerCase().includes(query.toLowerCase())) {
-                        results.push({
-                            title: article.title,
-                            content: article.content,
-                            category: category,
-                            issueNumber: issueNumber,
-                            author: article.author
-                        });
-                    }
-                })
-                .catch(error => console.error(error));
-            promises.push(fetchPromise);
-        });
-    });
-
-    Promise.all(promises).then(() => {
-        displayResults(results, query);
-        if (results.length === 0) {
-            document.getElementById('search-results').innerHTML = '<p>No results found. Please try another search term or check back later.</p>';
+        if (filteredResults.length === 0) {
+            searchResultsContainer.innerHTML = '<p>No results found. Please try a different search term.</p>';
+        } else {
+            filteredResults.forEach(({ article, issueNumber, category }) => {
+                const snippet = getSnippet(article.content, query);
+                const searchItem = document.createElement('div');
+                searchItem.classList.add('search-result-item');
+                searchItem.innerHTML = `
+                    <h2><a href="issueDetail.html?issue=${issueNumber}">${article.title}</a></h2>
+                    <p>Issue: ${formatDate(issueNumber)}</p>
+                    <p>Author: <span style="color: #ffcc66;">${article.author}</span></p>
+                    <p>..."<em>${snippet}</em>"...</p>
+                `;
+                searchResultsContainer.appendChild(searchItem);
+            });
         }
-    });
+    }).catch(error => console.error('Error loading search results:', error));
 });
 
-function displayResults(results, query) {
-    const container = document.getElementById('search-results');
-    container.innerHTML = '<h2 class="search-results-header">Search Results</h2>';
-
-    if (results.length === 0) {
-        container.innerHTML += '<p>No results found. Please try another search term or check back later.</p>';
-        return;
-    }
-
-    results.forEach(article => {
-        const snippet = getSnippet(article.content, query);
-        const issueDate = formatDate(article.issueNumber);
-        const articleElement = `
-            <div class="search-result">
-                <a href="https://aurelius-in.github.io/neuralnet.press/articles/issueDetail.html?issue=${article.issueNumber}" class="search-link">
-                    <h2 class="search-title">${article.title}</h2>
-                </a>
-                <p class="search-snippet">"...${snippet}..."</p>
-                <a href="https://aurelius-in.github.io/neuralnet.press/articles/issueDetail.html?issue=${article.issueNumber}" class="search-link">
-                    <p class="search-issue">Issue: ${issueDate}</p>
-                </a>
-                <a href="https://aurelius-in.github.io/neuralnet.press/articles/issueDetail.html?issue=${article.issueNumber}" class="search-link author-name">
-                    <p class="search-author">${article.author}</p>
-                </a>
-            </div>
-        `;
-        container.innerHTML += articleElement;
-    });
-}
-
 function getSnippet(content, query) {
-    const words = content.split(/\s+/);
-    const index = words.findIndex(word => word.toLowerCase().includes(query.toLowerCase()));
-    const start = Math.max(index - 3, 0);
-    const end = Math.min(index + 4, words.length);
-    const snippetWords = words.slice(start, end);
-    return snippetWords.map(word => word.toLowerCase().includes(query.toLowerCase()) ? `<b>${word}</b>` : word).join(' ');
+    const lowerContent = content.toLowerCase();
+    const lowerQuery = query.toLowerCase();
+    const queryIndex = lowerContent.indexOf(lowerQuery);
+
+    if (queryIndex === -1) return '';
+
+    const start = Math.max(0, queryIndex - 30);
+    const end = Math.min(content.length, queryIndex + query.length + 30);
+
+    let snippet = content.slice(start, end);
+    snippet = snippet.replace(new RegExp(`(${query})`, 'ig'), '<strong>$1</strong>');
+
+    return snippet;
 }
 
 function formatDate(issueNumber) {
