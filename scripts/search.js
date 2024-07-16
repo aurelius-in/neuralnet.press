@@ -53,10 +53,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function displayResults(results, query) {
     const container = document.getElementById('search-results');
-    container.innerHTML = '';
+    container.innerHTML = '<h2 class="search-results-header">Search Results</h2>';
 
     if (results.length === 0) {
-        container.innerHTML = '<p>No results found. Please try another search term or check back later.</p>';
+        container.innerHTML += '<p>No results found. Please try another search term or check back later.</p>';
         return;
     }
 
