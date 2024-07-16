@@ -11,6 +11,27 @@
     <link rel="stylesheet" href="../styles/articles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+    /* Specific adjustments for issueDetail.html */
+    .logo.issue-detail {
+        max-height: 45px; /* Make the logo slightly smaller */
+        margin-left: 50px; /* Increase the margin from the left edge */
+    }
+    /* Gradient animation for the header */
+    @keyframes gradient {
+        0% { color: #ff9900; }
+        25% { color: #ffcc66; }
+        50% { color: #fff; }
+        75% { color: #ffcc66; }
+        100% { color: #ff9900; }
+    }
+    #issue-title {
+        font-size: 2rem; /* Reduced font size */
+        font-weight: 600; /* Reduced font weight */
+        text-align: center;
+        text-transform: uppercase;
+        animation: gradient 5s infinite;
+    }
+
         /* Specific adjustments for issueDetail.html */
         .logo.issue-detail {
             max-height: 45px; /* Make the logo slightly smaller */
