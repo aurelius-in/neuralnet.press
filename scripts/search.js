@@ -28,13 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     return response.json();
                 })
                 .then(article => {
+                    console.log(`Fetched article from ${issueNumber}${category}.json: ${article.title}`); // Log fetched article title
+                    console.log(`Article content: ${article.content}`); // Log fetched article content
                     if (article.content.toLowerCase().includes(query.toLowerCase()) || article.title.toLowerCase().includes(query.toLowerCase())) {
+                        console.log(`Article matches query: ${query}`); // Log matching article
                         results.push({
                             title: article.title,
                             content: article.content,
                             category: category,
-                            issueNumber: issueNumber,
-                            author: article.author
+                            issueNumber: issueNumber
                         });
                     }
                 })
@@ -46,17 +48,17 @@ document.addEventListener('DOMContentLoaded', function() {
     Promise.all(promises).then(() => {
         displayResults(results, query);
         if (results.length === 0) {
-            document.getElementById('search-results').innerHTML = '<p>No results found. Please try another search term or check back later.</p>';
+            console.log('No results found. Results array:', results); // Log if no results found
         }
     });
 });
 
 function displayResults(results, query) {
     const container = document.getElementById('search-results');
-    container.innerHTML = '<h2 class="search-results-header">Search Results</h2>';
+    container.innerHTML = '';
 
     if (results.length === 0) {
-        container.innerHTML += '<p>No results found. Please try another search term or check back later.</p>';
+        container.innerHTML = '<p>No results found. Please try another search term or check back later.</p>';
         return;
     }
 
@@ -65,16 +67,9 @@ function displayResults(results, query) {
         const issueDate = formatDate(article.issueNumber);
         const articleElement = `
             <div class="search-result">
-                <a href="https://aurelius-in.github.io/neuralnet.press/articles/issueDetail.html?issue=${article.issueNumber}" class="search-link">
-                    <h2 class="search-title">${article.title}</h2>
-                </a>
+                <h2 class="search-title">${article.title}</h2>
                 <p class="search-snippet">"...${snippet}..."</p>
-                <a href="https://aurelius-in.github.io/neuralnet.press/articles/issueDetail.html?issue=${article.issueNumber}" class="search-link">
-                    <p class="search-issue">Issue: ${issueDate}</p>
-                </a>
-                <a href="https://aurelius-in.github.io/neuralnet.press/articles/issueDetail.html?issue=${article.issueNumber}" class="search-link author-name">
-                    <p class="search-author">${article.author}</p>
-                </a>
+                <p class="search-issue">Issue: ${issueDate}</p>
             </div>
         `;
         container.innerHTML += articleElement;
@@ -86,8 +81,7 @@ function getSnippet(content, query) {
     const index = words.findIndex(word => word.toLowerCase().includes(query.toLowerCase()));
     const start = Math.max(index - 3, 0);
     const end = Math.min(index + 4, words.length);
-    const snippetWords = words.slice(start, end);
-    return snippetWords.map(word => word.toLowerCase().includes(query.toLowerCase()) ? `<b>${word}</b>` : word).join(' ');
+    return words.slice(start, end).join(' ');
 }
 
 function formatDate(issueNumber) {
