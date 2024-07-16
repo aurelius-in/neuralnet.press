@@ -169,21 +169,53 @@ footer {
 }
 
 /* Styles for search results */
-.search-result {
+.search-results-header {
+    text-align: center;
+    font-size: 1.5rem; /* Slightly smaller font size */
+    font-weight: bold;
+    color: #fff;
     margin-bottom: 20px;
 }
 
-.search-title {
+.search-result {
+    color: #fff;
     font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    padding-left: 20px; /* Add some space from the left edge */
+}
+
+.search-title {
+    display: block;
+    color: #fff;
+    text-decoration: underline;
+    margin: 5px 0;
     font-weight: bold;
-    color: #003789;
-    margin-bottom: 5px;
 }
 
 .search-snippet {
-    font-family: 'Montserrat', sans-serif;
-    font-style: italic;
-    color: #666;
+    display: block;
+    color: #fff;
+    margin: 5px 0;
 }
 
+.search-snippet b {
+    font-weight: bold;
+}
 
+.search-issue, .search-author {
+    display: block;
+    color: #fff;
+    margin: 5px 0;
+}
+
+.search-title:hover, .search-issue:hover, .search-author:hover, .search-snippet b:hover {
+    color: #ffcc66;
+}
+
+.search-title:visited, .search-issue:visited, .search-author:visited, .search-snippet b:visited {
+    color: #ffcc66;
+}
+
+.search-author {
+    color: #ffcc66; /* Light orange color */
+}
