@@ -28,10 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     return response.json();
                 })
                 .then(article => {
-                    console.log(`Fetched article from ${issueNumber}${category}.json: ${article.title}`); // Log fetched article title
-                    console.log(`Article content: ${article.content}`); // Log fetched article content
                     if (article.content.toLowerCase().includes(query.toLowerCase()) || article.title.toLowerCase().includes(query.toLowerCase())) {
-                        console.log(`Article matches query: ${query}`); // Log matching article
                         results.push({
                             title: article.title,
                             content: article.content,
@@ -49,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     Promise.all(promises).then(() => {
         displayResults(results, query);
         if (results.length === 0) {
-            console.log('No results found. Results array:', results); // Log if no results found
+            document.getElementById('search-results').innerHTML = '<p>No results found. Please try another search term or check back later.</p>';
         }
     });
 });
@@ -71,9 +68,7 @@ function displayResults(results, query) {
                 <a href="https://aurelius-in.github.io/neuralnet.press/articles/issueDetail.html?issue=${article.issueNumber}" class="search-link">
                     <h2 class="search-title">${article.title}</h2>
                 </a>
-                <a href="https://aurelius-in.github.io/neuralnet.press/articles/issueDetail.html?issue=${article.issueNumber}" class="search-link">
-                    <p class="search-snippet">"...${snippet}..."</p>
-                </a>
+                <p class="search-snippet">"...${snippet}..."</p>
                 <a href="https://aurelius-in.github.io/neuralnet.press/articles/issueDetail.html?issue=${article.issueNumber}" class="search-link">
                     <p class="search-issue">Issue: ${issueDate}</p>
                 </a>
@@ -91,7 +86,8 @@ function getSnippet(content, query) {
     const index = words.findIndex(word => word.toLowerCase().includes(query.toLowerCase()));
     const start = Math.max(index - 3, 0);
     const end = Math.min(index + 4, words.length);
-    return words.slice(start, end).join(' ');
+    const snippetWords = words.slice(start, end);
+    return snippetWords.map(word => word.toLowerCase().includes(query.toLowerCase()) ? `<b>${word}</b>` : word).join(' ');
 }
 
 function formatDate(issueNumber) {
