@@ -31,7 +31,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
             searchButton.addEventListener('click', () => {
                 if (searchInput.value.trim()) {
-                    window.location.href = `search.html?query=${encodeURIComponent(searchInput.value.trim())}`;
+                    const searchQuery = encodeURIComponent(searchInput.value.trim());
+                    const currentPath = window.location.pathname;
+                    let searchUrl = '';
+
+                    if (currentPath.includes('/articles/')) {
+                        searchUrl = `../search.html?query=${searchQuery}`;
+                    } else {
+                        searchUrl = `search.html?query=${searchQuery}`;
+                    }
+
+                    window.location.href = searchUrl;
                 }
             });
         })
