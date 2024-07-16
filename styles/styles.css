@@ -175,23 +175,30 @@ footer {
     margin-bottom: 20px;
 }
 
-.search-title, .search-snippet, .search-issue, .search-author {
+.search-title, .search-issue {
     display: block;
     color: #fff;
     text-decoration: underline;
     margin: 5px 0;
+    font-weight: bold;
 }
 
-.search-title:hover, .search-snippet:hover, .search-issue:hover, .search-author:hover {
+.search-snippet, .search-author {
+    display: block;
+    color: #fff;
+    margin: 5px 0;
+}
+
+.search-snippet b {
+    font-weight: bold;
+}
+
+.search-title:hover, .search-issue:hover, .search-author:hover, .search-snippet b:hover {
     color: #ffcc66;
 }
 
-.search-title:visited, .search-snippet:visited, .search-issue:visited, .search-author:visited {
+.search-title:visited, .search-issue:visited, .search-author:visited, .search-snippet b:visited {
     color: #ffcc66;
-}
-
-.search-snippet {
-    font-style: italic;
 }
 
 .search-author {
