@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             title: article.title,
                             content: article.content,
                             category: category,
-                            issueNumber: issueNumber
+                            issueNumber: issueNumber,
+                            author: article.author
                         });
                     }
                 })
@@ -67,9 +68,18 @@ function displayResults(results, query) {
         const issueDate = formatDate(article.issueNumber);
         const articleElement = `
             <div class="search-result">
-                <h2 class="search-title">${article.title}</h2>
-                <p class="search-snippet">"...${snippet}..."</p>
-                <p class="search-issue">Issue: ${issueDate}</p>
+                <a href="https://aurelius-in.github.io/neuralnet.press/articles/issueDetail.html?issue=${article.issueNumber}" class="search-link">
+                    <h2 class="search-title">${article.title}</h2>
+                </a>
+                <a href="https://aurelius-in.github.io/neuralnet.press/articles/issueDetail.html?issue=${article.issueNumber}" class="search-link">
+                    <p class="search-snippet">"...${snippet}..."</p>
+                </a>
+                <a href="https://aurelius-in.github.io/neuralnet.press/articles/issueDetail.html?issue=${article.issueNumber}" class="search-link">
+                    <p class="search-issue">Issue: ${issueDate}</p>
+                </a>
+                <a href="https://aurelius-in.github.io/neuralnet.press/articles/issueDetail.html?issue=${article.issueNumber}" class="search-link author-name">
+                    <p class="search-author">${article.author}</p>
+                </a>
             </div>
         `;
         container.innerHTML += articleElement;
