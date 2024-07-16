@@ -169,13 +169,22 @@ footer {
 }
 
 /* Styles for search results */
+.search-results-header {
+    text-align: center;
+    font-size: 1.5rem; /* Slightly smaller font size */
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
 .search-result {
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 20px;
+    padding-left: 20px; /* Add some space from the left edge */
 }
 
-.search-title, .search-issue {
+.search-title {
     display: block;
     color: #fff;
     text-decoration: underline;
@@ -183,7 +192,7 @@ footer {
     font-weight: bold;
 }
 
-.search-snippet, .search-author {
+.search-snippet {
     display: block;
     color: #fff;
     margin: 5px 0;
@@ -191,6 +200,12 @@ footer {
 
 .search-snippet b {
     font-weight: bold;
+}
+
+.search-issue, .search-author {
+    display: block;
+    color: #fff;
+    margin: 5px 0;
 }
 
 .search-title:hover, .search-issue:hover, .search-author:hover, .search-snippet b:hover {
