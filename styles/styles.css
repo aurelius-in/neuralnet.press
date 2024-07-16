@@ -175,18 +175,25 @@ footer {
     margin-bottom: 20px;
 }
 
-.search-title {
-    font-weight: bold;
-    font-size: 1rem;
-}
-
-.search-snippet {
-    font-size: 1rem;
-    font-style: italic;
+.search-title, .search-snippet, .search-issue, .search-author {
+    display: block;
+    color: #fff;
+    text-decoration: underline;
     margin: 5px 0;
 }
 
-.search-issue {
-    font-size: 1rem;
-    margin-top: 5px;
+.search-title:hover, .search-snippet:hover, .search-issue:hover, .search-author:hover {
+    color: #ffcc66;
+}
+
+.search-title:visited, .search-snippet:visited, .search-issue:visited, .search-author:visited {
+    color: #ffcc66;
+}
+
+.search-snippet {
+    font-style: italic;
+}
+
+.search-author {
+    color: #ffcc66; /* Light orange color */
 }
