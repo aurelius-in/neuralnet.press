@@ -7,50 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    const categories = [
-        'startups', 'research', 'industry', 'robotics', 'policy',
-        'entertainment', 'cybersecurity', 'events', 'environment',
-        'society', 'collaborations', 'education', 'ethics', 'healthcare'
-    ];
-
-    const issueNumbers = ['2407', '2406', '2405', '2404', '2403', '2402', '2401', '2312']; // List all your issue numbers here
-
-    let results = [];
-    let promises = [];
-
-    categories.forEach(category => {
-        issueNumbers.forEach(issueNumber => {
-            const fetchPromise = fetch(`https://aurelius-in.github.io/neuralnet.press/data/${issueNumber}${category}.json`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Error loading ${category} articles for issue ${issueNumber}`);
-                    }
-                    return response.json();
-                })
-                .then(article => {
-                    console.log(`Fetched article from ${issueNumber}${category}.json: ${article.title}`); // Log fetched article title
-                    console.log(`Article content: ${article.content}`); // Log fetched article content
-                    if (article.content.toLowerCase().includes(query.toLowerCase()) || article.title.toLowerCase().includes(query.toLowerCase())) {
-                        console.log(`Article matches query: ${query}`); // Log matching article
-                        results.push({
-                            title: article.title,
-                            content: article.content,
-                            category: category,
-                            issueNumber: issueNumber
-                        });
-                    }
-                })
-                .catch(error => console.error(error));
-            promises.push(fetchPromise);
-        });
-    });
-
-    Promise.all(promises).then(() => {
-        displayResults(results, query);
-        if (results.length === 0) {
-            console.log('No results found. Results array:', results); // Log if no results found
-        }
-    });
+    fetch('data/articles.json') // Assume all articles are indexed in this file
+        .then(response => response.json())
+        .then(articles => {
+            const results = articles.filter(article => article.content.includes(query));
+            displayResults(results, query);
+        })
+        .catch(error => console.error('Error loading articles:', error));
 });
 
 function displayResults(results, query) {
@@ -58,7 +21,7 @@ function displayResults(results, query) {
     container.innerHTML = '';
 
     if (results.length === 0) {
-        container.innerHTML = '<p>No results found. Please try another search term or check back later.</p>';
+        container.innerHTML = '<p>No results found.</p>';
         return;
     }
 
@@ -76,7 +39,7 @@ function displayResults(results, query) {
 
 function getSnippet(content, query) {
     const words = content.split(/\s+/);
-    const index = words.findIndex(word => word.toLowerCase().includes(query.toLowerCase()));
+    const index = words.findIndex(word => word.includes(query));
     const start = Math.max(index - 3, 0);
     const end = Math.min(index + 4, words.length);
     return words.slice(start, end).join(' ');
