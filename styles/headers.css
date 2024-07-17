@@ -31,8 +31,8 @@ header {
 }
 
 .issue-detail-topbar .logo {
-    max-height: 40px;
-    margin-left: 20px; /* Ensure the logo is not too far right */
+    max-height: 35px; /* Further reduce the logo size */
+    margin-left: 15px; /* Adjust the margin to the left */
 }
 
 .issue-detail-topbar .menu-toggle {
