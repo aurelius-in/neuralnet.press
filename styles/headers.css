@@ -10,14 +10,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 10px; /* Reduced padding on left edge */
-    padding-right: 20px; /* Adjust padding on right edge */
+    padding-left: 20px; /* Standard padding on left edge */
+    padding-right: 20px; /* Standard padding on right edge */
 }
 
 .logo {
     max-height: 50px;
     object-fit: contain;
-    margin-left: 20px; /* Margin for the logo */
+    margin-left: 40px; /* Ensure logo has enough space from the left */
 }
 
 .menu-toggle {
@@ -26,18 +26,18 @@ header {
     font-size: 24px;
     cursor: pointer;
     color: #003789; /* Match the main color theme */
-    padding-left: 5px; /* Bring menu button closer to left edge */
-    margin-right: 10px; /* Adjust margin to prevent overlap */
+    margin-right: auto; /* Align menu button to the far left */
+    padding-left: 10px; /* Add minimal padding to the left */
 }
 
 .issue-detail-topbar .logo {
-    max-height: 45px; 
-    margin-left: 20px; /* Same as other pages */
+    max-height: 45px;
+    margin-left: 40px; /* Ensure logo has enough space from the left */
 }
 
 .issue-detail-topbar .menu-toggle {
-    margin-right: 10px; /* Same as other pages */
-    padding-left: 5px; /* Bring closer to left edge */
+    margin-right: auto; /* Align menu button to the far left */
+    padding-left: 10px; /* Add minimal padding to the left */
 }
 
 .nav-icons {
