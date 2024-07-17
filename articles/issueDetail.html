@@ -14,8 +14,71 @@
         /* Specific adjustments for issueDetail.html */
         .issue-detail-topbar .logo {
             max-height: 35px; /* Reduce the logo size */
-            margin-left: 15px; /* Adjust margin to align better */
+            margin-left: 30px; /* Adjust margin to align better */
         }
+
+        /* General adjustments for all pages */
+        .logo {
+            max-height: 50px;
+            object-fit: contain;
+            margin-left: 35px; /* Increase margin to the left */
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #003789; /* Match the main color theme */
+            margin-right: 10px; /* Adjust margin to prevent overlap */
+            padding-left: 5px; /* Add minimal padding to the left */
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 15px;
+            margin-right: 30px; /* Add margin to the right edge */
+        }
+
+        .nav-icons a {
+            text-decoration: none;
+            font-size: 24px;
+            color: #003789; /* Match the main color theme */
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px; /* Adjust based on header height */
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.5); /* More transparent background */
+            width: auto; /* Reduce the width */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 5px 10px; /* Adjust padding */
+            border-radius: 5px; /* Add border radius for a cleaner look */
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-links li {
+            list-style: none;
+            padding: 2px 0; /* Reduce padding between links */
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #003789;
+            font-size: 14px; /* Smaller text size */
+            font-weight: bold; /* Bold text */
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(0, 0, 0, 0.05); /* Slight hover effect */
+        }
+
         /* Gradient animation for the header */
         @keyframes gradient {
             0% { color: #ff9900; }
@@ -24,6 +87,7 @@
             75% { color: #ffcc66; }
             100% { color: #ff9900; }
         }
+
         #issue-title {
             font-size: 2rem; /* Reduced font size */
             font-weight: 600; /* Reduced font weight */
@@ -34,7 +98,7 @@
     </style>
 </head>
 <body>
-    <div id="topbar-placeholder"></div>
+    <div id="topbar-placeholder" class="issue-detail-topbar"></div>
     <main>
         <div class="container">
             <h1 id="issue-title"></h1>
