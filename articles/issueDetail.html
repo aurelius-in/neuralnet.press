@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, width=device-width, initial-scale=1.0">
     <title>Issue Details - NeuralNet Press</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/headers.css">
@@ -77,6 +77,12 @@
 
         .nav-links a:hover {
             background-color: rgba(0, 0, 0, 0.05); /* Slight hover effect */
+        }
+
+        /* Prevent overflow and scaling issues */
+        body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            width: 100%;
         }
 
         /* Gradient animation for the header */
