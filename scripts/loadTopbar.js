@@ -1,6 +1,6 @@
 // loadTopbar.js
 document.addEventListener('DOMContentLoaded', function() {
-    const pathToTopbar = location.pathname.includes('/articles/') || location.pathname.includes('/search/') ? '../topbar.html' : 'topbar.html';
+    const pathToTopbar = location.pathname.includes('/articles/') || location.pathname.includes('/search/') ? '/neuralnet.press/topbar.html' : 'topbar.html';
     console.log('Loading topbar from:', pathToTopbar);
 
     fetch(pathToTopbar)
@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const searchButton = document.getElementById('search-button');
             const searchInput = document.getElementById('search-input');
 
+            // Add specific class for issueDetail.html page
+            if (location.pathname.includes('/articles/issueDetail.html')) {
+                menuToggle.classList.add('issue-detail');
+            }
+
             menuToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
             });
@@ -31,17 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             searchButton.addEventListener('click', () => {
                 if (searchInput.value.trim()) {
-                    const searchQuery = encodeURIComponent(searchInput.value.trim());
-                    const currentPath = window.location.pathname;
-                    let searchUrl = '';
-
-                    if (currentPath.includes('/articles/')) {
-                        searchUrl = `../search.html?query=${searchQuery}`;
-                    } else {
-                        searchUrl = `search.html?query=${searchQuery}`;
-                    }
-
-                    window.location.href = searchUrl;
+                    window.location.href = `/neuralnet.press/search.html?query=${encodeURIComponent(searchInput.value.trim())}`;
                 }
             });
         })
