@@ -1,6 +1,6 @@
 // loadTopbar.js
 document.addEventListener('DOMContentLoaded', function() {
-    const pathToTopbar = location.pathname.includes('/articles/') || location.pathname.includes('/search/') ? '/neuralnet.press/topbar.html' : 'topbar.html';
+    const pathToTopbar = location.pathname.includes('/articles/') ? '/neuralnet.press/topbar.html' : 'topbar.html';
     console.log('Loading topbar from:', pathToTopbar);
 
     fetch(pathToTopbar)
@@ -11,7 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.text();
         })
         .then(data => {
-            document.getElementById('topbar-placeholder').innerHTML = data;
+            const topbarPlaceholder = document.getElementById('topbar-placeholder');
+            topbarPlaceholder.innerHTML = data;
+
+            // Add the specific class if the path includes '/articles/'
+            if (location.pathname.includes('/articles/')) {
+                topbarPlaceholder.classList.add('issue-detail-topbar');
+            }
 
             // Event listeners for topbar
             const menuToggle = document.getElementById('menu-toggle');
@@ -20,11 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const searchDropdown = document.getElementById('search-dropdown');
             const searchButton = document.getElementById('search-button');
             const searchInput = document.getElementById('search-input');
-
-            // Add specific class for issueDetail.html page
-            if (location.pathname.includes('/articles/issueDetail.html')) {
-                menuToggle.classList.add('issue-detail');
-            }
 
             menuToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
