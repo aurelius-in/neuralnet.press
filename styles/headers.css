@@ -14,10 +14,6 @@ header {
     padding-right: 20px; /* Adjust padding on right edge */
 }
 
-/* Adjustments for issueDetail.html page */
-.issue-detail-topbar .logo {
-    max-height: 45px; /* Make the logo slightly smaller */
-}
 
 .issue-detail-topbar .menu-toggle {
     margin-right: 10px; /* Decrease margin to the right edge */
@@ -26,7 +22,7 @@ header {
 .issue-detail-topbar .logo { 
     max-height: 45px; 
     /* Keep the logo slightly smaller */ 
-    margin-left: 40px; /* Decrease the margin from the left edge */ }
+    margin-left: 35px; /* Decrease the margin from the left edge */ }
 
 .logo {
     max-height: 50px;
