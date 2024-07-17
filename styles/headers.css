@@ -37,6 +37,7 @@ header {
 
 .issue-detail-topbar .menu-toggle {
     margin-right: 10px; /* Same as other pages */
+    padding-left: 5px; /* Bring closer to left edge */
 }
 
 .nav-icons {
