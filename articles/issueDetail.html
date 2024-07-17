@@ -11,14 +11,6 @@
     <link rel="stylesheet" href="../styles/articles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Specific adjustments for issueDetail.html */
-        .logo.issue-detail {
-            max-height: 45px; /* Make the logo slightly smaller */
-            margin-left: 60px; /* Increase the margin from the left edge */
-        }
-        .menu-toggle.issue-detail {
-            margin-left: 10px; /* Add extra space between menu button and logo */
-        }
         /* Gradient animation for the header */
         @keyframes gradient {
             0% { color: #ff9900; }
@@ -34,18 +26,10 @@
             text-transform: uppercase;
             animation: gradient 5s infinite;
         }
-        header .menu-toggle.issue-detail {
-        margin-left: 10px; /* Adjust this value to control spacing */
-        }
-
-        header .logo.issue-detail {
-        margin-left: 60px; /* Adjust this value to control spacing */
-        }
-        
     </style>
 </head>
 <body>
-    <div id="topbar-placeholder"></div>
+    <div id="topbar-placeholder" class="issue-detail-topbar"></div>
     <main>
         <div class="container">
             <h1 id="issue-title"></h1>
