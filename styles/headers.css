@@ -14,6 +14,15 @@ header {
     padding-right: 20px; /* Adjust padding on right edge */
 }
 
+header.issue-detail .logo {
+    margin-left: 60px; /* Increase the margin from the left edge */
+}
+
+header.issue-detail .menu-toggle {
+    margin-right: 20px; /* Decrease margin to the right edge */
+}
+
+
 .logo {
     max-height: 50px;
     object-fit: contain;
