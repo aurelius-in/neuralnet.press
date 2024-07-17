@@ -17,12 +17,16 @@ header {
 /* Adjustments for issueDetail.html page */
 .issue-detail-topbar .logo {
     max-height: 45px; /* Make the logo slightly smaller */
-    margin-left: 60px; /* Increase the margin from the left edge */
 }
 
 .issue-detail-topbar .menu-toggle {
     margin-right: 10px; /* Decrease margin to the right edge */
 }
+
+.issue-detail-topbar .logo { 
+    max-height: 45px; 
+    /* Keep the logo slightly smaller */ 
+    margin-left: 40px; /* Decrease the margin from the left edge */ }
 
 .logo {
     max-height: 50px;
