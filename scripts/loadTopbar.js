@@ -11,13 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.text();
         })
         .then(data => {
-            const topbarPlaceholder = document.getElementById('topbar-placeholder');
-            topbarPlaceholder.innerHTML = data;
-
-            // Add the specific class if the path includes '/articles/'
-            if (location.pathname.includes('/articles/')) {
-                topbarPlaceholder.classList.add('issue-detail-topbar');
-            }
+            document.getElementById('topbar-placeholder').innerHTML = data;
 
             // Event listeners for topbar
             const menuToggle = document.getElementById('menu-toggle');
